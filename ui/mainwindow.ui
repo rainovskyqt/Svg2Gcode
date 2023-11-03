@@ -36,7 +36,11 @@
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout_3">
       <item>
-       <widget class="QLineEdit" name="line_targetPath"/>
+       <widget class="QLineEdit" name="line_targetPath">
+        <property name="text">
+         <string>/home/rainovsky/Projects/SvgParser/tests/image/Bicycle.nc</string>
+        </property>
+       </widget>
       </item>
       <item>
        <widget class="QToolButton" name="btn_targetPath">

@@ -9,11 +9,26 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    src/main.cpp \
-    src/mainwindow.cpp
+    cpp/gcodecomments.cpp \
+    cpp/logger.cpp \
+    cpp/main.cpp \
+    cpp/mainwindow.cpp \
+    cpp/svgelement.cpp \
+    cpp/svgelementfactory.cpp \
+    cpp/svgfiledata.cpp \
+    cpp/svgparser.cpp \
+    cpp/tool.cpp
 
 HEADERS += \
-    include/mainwindow.h
+    include/gcodecomments.h \
+    include/logger.h \
+    include/mainwindow.h \
+    include/svgelement.h \
+    include/svgelementfactory.h \
+    include/svgfiledata.h \
+    include/svgparser.h \
+    include/tool.h \
+    include/transformlist.h
 
 FORMS += \
     ui/mainwindow.ui

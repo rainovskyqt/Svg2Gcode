@@ -4,6 +4,9 @@
 #include <QFile>
 #include <QFileDialog>
 #include <QMessageBox>
+#include <QXmlStreamReader>
+
+#include "svgparser.h"
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -48,9 +51,9 @@ void MainWindow::on_btn_exit_clicked()
 
 void MainWindow::on_btn_start_clicked()
 {
-    QFile svgFile(ui->line_sourcePath->text());
-    if(!svgFile.open(QIODevice::ReadOnly)){
-        QMessageBox::critical(this, "Ошибка файла", svgFile.errorString());\
+    if(ui->line_sourcePath->text().isEmpty())
         return;
-    }
+
+    SvgParser *parcer = new SvgParser();
+    parcer->parsing(ui->line_sourcePath->text());
 }
