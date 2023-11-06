@@ -17,7 +17,7 @@ bool SvgParser::parsing(QXmlStreamReader *reader)
 
         QXmlStreamReader::TokenType type = reader->readNext();
         if(reader->error()){
-            m_logger->write(reader->errorString());
+             m_logger->write(QString("Ошибка открытия файла: %1").arg(reader->errorString()));
             return false;
         }
 
@@ -53,7 +53,7 @@ void SvgParser::parsingElement(QXmlStreamReader *reader)
     while (!reader->atEnd())
     {
         if(reader->error()){
-            qCritical() << reader->error();
+            m_logger->write(QString("ошибка парсинга файла").arg(reader->error()));
             return;
         }
 

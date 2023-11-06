@@ -16,8 +16,10 @@ SOURCES += \
     cpp/svgelement.cpp \
     cpp/svgelementfactory.cpp \
     cpp/svgfiledata.cpp \
+    cpp/svglayer.cpp \
     cpp/svgparser.cpp \
-    cpp/tool.cpp
+    cpp/svgstyle.cpp
+    cpp/tool.cpp \
 
 HEADERS += \
     include/gcodecomments.h \
@@ -26,7 +28,9 @@ HEADERS += \
     include/svgelement.h \
     include/svgelementfactory.h \
     include/svgfiledata.h \
+    include/svglayer.h \
     include/svgparser.h \
+    include/svgstyle.h \
     include/tool.h \
     include/transformlist.h
 
