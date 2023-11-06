@@ -2,12 +2,18 @@
 #define SVGELEMENTFACTORY_H
 
 
+#include <QObject>
+
 #include "svgelement.h"
 
-class SvgElementFactory
+
+class SvgElementFactory: public QObject
 {
+
+    Q_OBJECT
+
 public:
-    SvgElementFactory();
+    SvgElementFactory(QObject *parent = nullptr);
 
     SvgElement* svgElement(QString name);
 };

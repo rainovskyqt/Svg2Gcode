@@ -4,15 +4,16 @@
 #include <QString>
 
 
-
 class GCodeComments
 {
 public:
-    GCodeComments(QString comment);
-    QString toString();
+    GCodeComments();
+    static GCodeComments *instance();
+
+    QString toString(const QString &comment);
 
 private:
-    QString m_comment;
+
 };
 
 #endif // GCODECOMMENTS_H

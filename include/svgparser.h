@@ -1,6 +1,7 @@
 #ifndef SVGPARSER_H
 #define SVGPARSER_H
 
+#include <QObject>
 #include <QString>
 #include <QVector>
 #include <QFile>
@@ -11,17 +12,18 @@
 #include "svgelement.h"
 
 
-class SvgParser
+class SvgParser: public QObject
 {
+    Q_OBJECT
 
 public slots:
-    bool parsing(QXmlStreamReader* reader);
-    bool parsing(QByteArray bytes);
-    bool parsing(QString filePath);
-    void parsingElement(QXmlStreamReader* reader);
+    QVector<SvgElement *> parsing(QXmlStreamReader* reader);
+    QVector<SvgElement *> parsing(QByteArray bytes);
+    QVector<SvgElement *>  parsing(QString filePath);
+    void setLog(QString logFilePath = QString(), bool consoleLog = true);
 
 public:
-    SvgParser();
+    SvgParser(QObject *parent = nullptr);
 
 
 private:
@@ -29,8 +31,7 @@ private:
 
     QVector<SvgElement*> m_elements;
 
-    Logger *m_logger;
-
+    void parsingElement(QXmlStreamReader* reader);
 };
 
 #endif // SVGPARSER_H

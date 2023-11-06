@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>376</width>
-    <height>111</height>
+    <height>160</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,7 +20,7 @@
       <item>
        <widget class="QLineEdit" name="line_sourcePath">
         <property name="text">
-         <string>/home/rainovsky/Projects/SvgParser/tests/image/Bicycle.svg</string>
+         <string>/home/rainovsky/Projects/Svg2Gcode/tests/image/Bicycle.svg</string>
         </property>
        </widget>
       </item>
@@ -38,7 +38,7 @@
       <item>
        <widget class="QLineEdit" name="line_targetPath">
         <property name="text">
-         <string>/home/rainovsky/Projects/SvgParser/tests/image/Bicycle.nc</string>
+         <string>/home/rainovsky/Projects/Svg2Gcode/tests/image/Bicycle.nc</string>
         </property>
        </widget>
       </item>
@@ -46,6 +46,27 @@
        <widget class="QToolButton" name="btn_targetPath">
         <property name="text">
          <string>...</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_4">
+      <item>
+       <widget class="QCheckBox" name="cb_logFile">
+        <property name="text">
+         <string>Вывод в лог. файл</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="cb_logConsole">
+        <property name="text">
+         <string>Вывод консоль</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
         </property>
        </widget>
       </item>

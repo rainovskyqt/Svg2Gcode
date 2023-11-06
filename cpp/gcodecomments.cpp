@@ -1,11 +1,18 @@
-#include "../include/gcodecomments.h"
+#include "gcodecomments.h"
 
-GCodeComments::GCodeComments(QString comment)
+Q_GLOBAL_STATIC(GCodeComments, comments)
+
+GCodeComments::GCodeComments()
 {
-    m_comment = comment;
+
 }
 
-QString GCodeComments::toString()
+GCodeComments *GCodeComments::instance()
 {
-    return QString("(%1)").arg(m_comment);
+    return comments;
+}
+
+QString GCodeComments::toString(const QString &comment)
+{
+    return QString("(%1)").arg(comment);
 }

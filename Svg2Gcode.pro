@@ -10,25 +10,33 @@ CONFIG += c++17
 
 SOURCES += \
     cpp/gcodecomments.cpp \
+    cpp/gcodeelement.cpp \
+    cpp/gcodeelementfactory.cpp \
+    cpp/gcodefiledata.cpp \
+    cpp/gcodegenerator.cpp \
     cpp/logger.cpp \
     cpp/main.cpp \
     cpp/mainwindow.cpp \
     cpp/svgelement.cpp \
     cpp/svgelementfactory.cpp \
     cpp/svgfiledata.cpp \
-    cpp/svglayer.cpp \
+    cpp/svggroupelement.cpp \
     cpp/svgparser.cpp \
     cpp/svgstyle.cpp
     cpp/tool.cpp \
 
 HEADERS += \
     include/gcodecomments.h \
+    include/gcodeelement.h \
+    include/gcodeelementfactory.h \
+    include/gcodefiledata.h \
+    include/gcodegenerator.h \
     include/logger.h \
     include/mainwindow.h \
     include/svgelement.h \
     include/svgelementfactory.h \
     include/svgfiledata.h \
-    include/svglayer.h \
+    include/svggroupelement.h \
     include/svgparser.h \
     include/svgstyle.h \
     include/tool.h \

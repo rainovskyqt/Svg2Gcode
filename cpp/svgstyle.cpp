@@ -1,4 +1,4 @@
-#include "../include/svgstyle.h"
+#include "svgstyle.h"
 
 SvgStyle::SvgStyle()
 {

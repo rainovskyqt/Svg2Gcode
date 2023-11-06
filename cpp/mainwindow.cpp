@@ -6,7 +6,7 @@
 #include <QMessageBox>
 #include <QXmlStreamReader>
 
-#include "svgparser.h"
+#include "gcodegenerator.h"
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -51,9 +51,50 @@ void MainWindow::on_btn_exit_clicked()
 
 void MainWindow::on_btn_start_clicked()
 {
-    if(ui->line_sourcePath->text().isEmpty())
+    if(ui->line_sourcePath->text().isEmpty()){
+        QMessageBox::critical(this, "Не указан исходный файл", "Укажите корректный файл svg для разбора");
         return;
+    }
 
-    SvgParser *parcer = new SvgParser();
-    parcer->parsing(ui->line_sourcePath->text());
+    if(ui->line_targetPath->text().isEmpty()){
+        QMessageBox::critical(this, "Не указан файл назначения", "Укажите файл для сохранения Gcode");
+        return;
+    }
+
+    setLogFile();
+
+    listOfElements = parceFile(ui->line_sourcePath->text());
+    if(listOfElements.isEmpty()){
+        QMessageBox::critical(this, "Ошибка", "При разборе, svg элементов не обнаружено, проверте исходный файл");
+    }
+
+    if(generateGcode(ui->line_targetPath->text())){            //NOTE Если хочется разделить поцессы, вынести в отдельную процедуру
+        QMessageBox::information(this, "Завершено", "Генерирование Gcode успешно завершено");
+    } else {
+         QMessageBox::critical(this, "Ошибка", "При генерации gcode произощла ошибка, посмотрите файл лога");
+    }
 }
+
+void MainWindow::setLogFile()
+{
+    if(ui->cb_logFile->isChecked())
+        Logger::instance()->setLogFile(QString("log_%1.txt").arg(QDateTime::currentDateTime().toString("yyyy-MM-dd_hh-mm-ss")));
+    else
+        Logger::instance()->setLogFile(QString());
+
+    Logger::instance()->setConsoleLog(ui->cb_logConsole->isChecked());
+}
+
+QVector<SvgElement *> MainWindow::parceFile(QString sourceFile)
+{
+    SvgParser *parcer = new SvgParser();
+    return parcer->parsing(sourceFile);
+
+}
+
+bool MainWindow::generateGcode(QString destFile)
+{
+    GcodeGenerator *generator = new GcodeGenerator(destFile);
+    return generator->genarate(listOfElements);
+}
+

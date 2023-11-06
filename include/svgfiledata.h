@@ -1,10 +1,12 @@
 #ifndef SVGFILEDATA_H
 #define SVGFILEDATA_H
 
-#include <svgelement.h>
+#include "svgelement.h"
 
 class SvgFileData : public SvgElement
 {
+    Q_OBJECT
+
 public:
     SvgFileData();
 

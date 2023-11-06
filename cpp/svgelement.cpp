@@ -1,6 +1,7 @@
 #include "svgelement.h"
 
-SvgElement::SvgElement()
+SvgElement::SvgElement(QObject *parent)
+    : QObject(parent)
 {
 
 }
@@ -46,4 +47,9 @@ int SvgElement::getInt(QXmlStreamAttributes *attribs, QString attributeName)
 QString SvgElement::getString(QXmlStreamAttributes *attribs, QString attributeName)
 {
     return findValue(attribs, attributeName);
+}
+
+SvgElement::SvgElementType SvgElement::type() const
+{
+    return m_type;
 }

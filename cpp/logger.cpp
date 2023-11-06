@@ -3,9 +3,17 @@
 #include <QDebug>
 #include <QDateTime>
 
-Logger::Logger(bool consolePrint, QString filePath)
+Q_GLOBAL_STATIC(Logger, global_inst)
+
+Logger::Logger()
 {
-    m_consolePrint = consolePrint;
+    m_consolePrint = true;
+    m_logFile = nullptr;
+}
+
+Logger *Logger::instance()
+{
+    return global_inst();
 }
 
 void Logger::write(QString text)
@@ -21,7 +29,15 @@ void Logger::write(QString text)
 
 void Logger::setLogFile(QString filePath)
 {
-    m_logFile = new QFile(filePath);
+    if(!filePath.isEmpty())
+        m_logFile = new QFile(filePath);
+    else
+        m_logFile = nullptr;
+}
+
+void Logger::setConsoleLog(bool print)
+{
+    m_consolePrint = print;
 }
 
 void Logger::writeToConsole(QString text)
@@ -36,4 +52,5 @@ void Logger::writeToFile(QString text)
 
     m_logFile->write(text.toUtf8());
     m_logFile->write("\n");
+    m_logFile->close();
 }
