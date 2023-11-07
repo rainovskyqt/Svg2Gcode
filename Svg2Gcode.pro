@@ -22,8 +22,8 @@ SOURCES += \
     cpp/svgfiledata.cpp \
     cpp/svggroupelement.cpp \
     cpp/svgparser.cpp \
-    cpp/svgstyle.cpp
-    cpp/tool.cpp \
+    cpp/svgstyle.cpp \
+    cpp/tool.cpp
 
 HEADERS += \
     include/gcodecomments.h \
@@ -39,8 +39,7 @@ HEADERS += \
     include/svggroupelement.h \
     include/svgparser.h \
     include/svgstyle.h \
-    include/tool.h \
-    include/transformlist.h
+    include/tool.h
 
 FORMS += \
     ui/mainwindow.ui

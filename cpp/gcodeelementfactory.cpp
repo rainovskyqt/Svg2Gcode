@@ -11,9 +11,6 @@ GcodeElementFactory::GcodeElementFactory(QObject *parent)
 
 GcodeElement *GcodeElementFactory::gcodeElement(SvgElement *svgElement)
 {
-    qDebug() << int(svgElement->type());
-    qDebug() << int(GcodeElement::GcodeElemenType::FileData);
-
     if(int(svgElement->type()) == int(GcodeElement::GcodeElemenType::FileData)){
         return new GcodeFileData(svgElement);
 //    } if (QString::compare(name, "g") == 0){

@@ -25,7 +25,6 @@ bool GcodeGenerator::genarate(QVector<SvgElement *> svgElementsList)
             continue;
 
         QByteArray array = gcodeElement->generate();
-        qDebug() << array;
         m_gcodeFile->write(gcodeElement->generate());
     }
 

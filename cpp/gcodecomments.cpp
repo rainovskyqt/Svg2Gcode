@@ -14,5 +14,5 @@ GCodeComments *GCodeComments::instance()
 
 QString GCodeComments::toString(const QString &comment)
 {
-    return QString("(%1)").arg(comment);
+    return QString("(%1)").arg(comment).toLatin1();
 }
