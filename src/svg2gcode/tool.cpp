@@ -27,16 +27,15 @@ void Tool::setToolType(ToolType newToolType)
     m_toolType = newToolType;
 }
 
-QByteArray Tool::move(int x, int y, int z)
+QString Tool::move(int x, int y, int z)
 {
     return QString("GO X%1 Y%2 Z%3")
             .arg(x)
             .arg(y)
-            .arg(z)
-            .toLatin1();
+            .arg(z);
 }
 
-QByteArray Tool::moveAndExtrude(double x, double y, double z, double extrudeVolume)
+QString Tool::moveAndExtrude(double x, double y, double z, double extrudeVolume)
 {
     return QString("G1 X%1 Y%2 Z%3 E%4")
             .arg(x)
@@ -46,26 +45,26 @@ QByteArray Tool::moveAndExtrude(double x, double y, double z, double extrudeVolu
             .toLatin1();
 }
 
-QByteArray Tool::pauseSec(int seconds)
+QString Tool::pauseSec(int seconds)
 {
     return QString("G4 S%1")
             .arg(seconds)
             .toLatin1();
 }
 
-QByteArray Tool::paudeMillsec(int millsec)
+QString Tool::pauseMillsec(int millsec)
 {
     return QString("G4 P%1")
             .arg(millsec)
             .toLatin1();
 }
 
-QByteArray Tool::headUp(int mm)
+QString Tool::headUp(int mm)
 {
     return move(0, 0, mm);
 }
 
-QByteArray Tool::headDown(int mm)
+QString Tool::headDown(int mm)
 {
     return move(0, 0, -mm);
 }

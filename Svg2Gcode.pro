@@ -9,43 +9,41 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    cpp/gcodecomments.cpp \
-    cpp/gcodeelement.cpp \
-    cpp/gcodeelementfactory.cpp \
-    cpp/gcodefiledata.cpp \
-    cpp/gcodegenerator.cpp \
-    cpp/logger.cpp \
-    cpp/main.cpp \
-    cpp/mainwindow.cpp \
-    cpp/svgelement.cpp \
-    cpp/svgelementfactory.cpp \
-    cpp/svgfiledata.cpp \
-    cpp/svggroupelement.cpp \
-    cpp/svgparser.cpp \
-    cpp/svgstyle.cpp \
-    cpp/tool.cpp
+    src/main.cpp \
+    src/mainwindow.cpp \
+    src/svg2gcode/gcodecomments.cpp \
+    src/svg2gcode/gcodeelement.cpp \
+    src/svg2gcode/gcodefiledata.cpp \
+    src/svg2gcode/gcodegenerator.cpp \
+    src/svg2gcode/logger.cpp \
+    src/svg2gcode/svgelement.cpp \
+    src/svg2gcode/svgfiledata.cpp \
+    src/svg2gcode/svggroupelement.cpp \
+    src/svg2gcode/svgparser.cpp \
+    src/svg2gcode/svgpath.cpp \
+    src/svg2gcode/svgstyle.cpp \
+    src/svg2gcode/svgtogcodeconverter.cpp \
+    src/svg2gcode/tool.cpp
 
 HEADERS += \
-    include/gcodecomments.h \
-    include/gcodeelement.h \
-    include/gcodeelementfactory.h \
-    include/gcodefiledata.h \
-    include/gcodegenerator.h \
-    include/logger.h \
-    include/mainwindow.h \
-    include/svgelement.h \
-    include/svgelementfactory.h \
-    include/svgfiledata.h \
-    include/svggroupelement.h \
-    include/svgparser.h \
-    include/svgstyle.h \
-    include/tool.h
+    src/mainwindow.h \
+    src/svg2gcode/gcodecomments.h \
+    src/svg2gcode/gcodeelement.h \
+    src/svg2gcode/gcodefiledata.h \
+    src/svg2gcode/gcodegenerator.h \
+    src/svg2gcode/logger.h \
+    src/svg2gcode/svgelement.h \
+    src/svg2gcode/svgfiledata.h \
+    src/svg2gcode/svggroupelement.h \
+    src/svg2gcode/svgparser.h \
+    src/svg2gcode/svgpath.h \
+    src/svg2gcode/svgstyle.h \
+    src/svg2gcode/svgtogcodeconverter.h \
+    src/svg2gcode/tool.h
 
 FORMS += \
-    ui/mainwindow.ui
+    src/mainwindow.ui
 
-INCLUDEPATH += \
-    include
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

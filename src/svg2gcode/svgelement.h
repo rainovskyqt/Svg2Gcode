@@ -12,7 +12,7 @@ class SvgElement : public QObject
     Q_OBJECT
 
 public:
-    SvgElement(QObject *parent = nullptr);
+    explicit SvgElement(QObject *parent = nullptr);
     virtual void parsing(QXmlStreamReader* reader) = 0;
 
     enum SvgElementType{
@@ -20,11 +20,12 @@ public:
         FileData
     };
 
-    static QString findValue(QXmlStreamAttributes* attribs, QString attributeName);
+    static SvgElement *element(const QString &name);
+    QString findValue(QXmlStreamAttributes* attribs, QString attributeName);
+    double getDouble(QXmlStreamAttributes* attribs, QString attributeName);
+    int getInt(QXmlStreamAttributes* attribs, QString attributeName);
+    QString getString(QXmlStreamAttributes* attribs, QString attributeName);
 
-    static double getDouble(QXmlStreamAttributes* attribs, QString attributeName);
-    static int getInt(QXmlStreamAttributes* attribs, QString attributeName);
-    static QString getString(QXmlStreamAttributes* attribs, QString attributeName);
 
 
     SvgElementType type() const;

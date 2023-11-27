@@ -20,13 +20,13 @@ public:
     int toolType() const;
     void setToolType(ToolType newToolType);
 
-    QByteArray move(int x, int y, int z);
-    QByteArray moveAndExtrude(double x, double y, double z, double extrudeVolume);
-    QByteArray pauseSec(int seconds);
-    QByteArray paudeMillsec(int millsec);
+    QString move(int x, int y, int z);
+    QString moveAndExtrude(double x, double y, double z, double extrudeVolume);
+    QString pauseSec(int seconds);
+    QString pauseMillsec(int millsec);
 
-    QByteArray headUp(int mm);
-    QByteArray headDown(int mm);
+    QString headUp(int mm);
+    QString headDown(int mm);
 protected:
     int m_feedRate;
     int m_toolType;

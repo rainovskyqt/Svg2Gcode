@@ -11,12 +11,11 @@ class GcodeGenerator : public QObject
     Q_OBJECT
 
 public:
-    explicit GcodeGenerator(QString desFile, QObject *parent = nullptr);
+    explicit GcodeGenerator(QObject *parent = nullptr);
 
-    bool genarate(QVector<SvgElement*> svgElementsList);
+    QStringList genarate(QVector<SvgElement*> svgElementsList);
 
 private:
-    QFile * m_gcodeFile;
 
 };
 

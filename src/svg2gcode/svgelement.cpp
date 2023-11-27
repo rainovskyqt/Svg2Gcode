@@ -1,9 +1,25 @@
 #include "svgelement.h"
+#include "logger.h"
+#include "svgfiledata.h"
+#include "svggroupelement.h"
 
 SvgElement::SvgElement(QObject *parent)
     : QObject(parent)
 {
 
+}
+
+SvgElement *SvgElement::element(const QString &name)
+{
+    Logger::instance()->write(QString("Обраружен элемент %1").arg(name));
+    if(QString::compare(name, "svg") == 0){
+        Logger::instance()->write(QString("Создали svg элемент SvgFileData"));
+        return new SvgFileData();
+    } else if (QString::compare(name, "g") == 0){
+        return new SvgGroupElement();
+    }
+
+    return nullptr;
 }
 
 QString SvgElement::findValue(QXmlStreamAttributes *attribs, QString attributeName)

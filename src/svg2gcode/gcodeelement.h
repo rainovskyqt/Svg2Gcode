@@ -16,7 +16,10 @@ public:
         FileData
     };
 
+    GcodeElement *element(const QString &name);
+
     virtual QByteArray generate() = 0;
+
 
 signals:
 

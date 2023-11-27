@@ -3,7 +3,7 @@
 
 #include <QMainWindow>
 
-#include "svgparser.h"
+#include "svg2gcode/svgparser.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -28,9 +28,11 @@ private slots:
 private:
     Ui::MainWindow *ui;
 
-    QVector<SvgElement*> listOfElements;
+    bool checkFilesPaths();
 
-    QVector<SvgElement*> parceFile(QString sourceFile);
-    bool generateGcode(QString destFile);
+//    QVector<SvgElement*> listOfElements;
+
+//    QVector<SvgElement*> parceFile(QString sourceFile);
+//    bool generateGcode(QString destFile);
 };
 #endif // MAINWINDOW_H
