@@ -1,7 +1,9 @@
 #include "svgelement.h"
 #include "logger.h"
+#include "svgpath.h"
 #include "svgfiledata.h"
 #include "svggroupelement.h"
+#include "svgtranformparser.h"
 
 SvgElement::SvgElement(QObject *parent)
     : QObject(parent)
@@ -17,6 +19,8 @@ SvgElement *SvgElement::element(const QString &name)
         return new SvgFileData();
     } else if (QString::compare(name, "g") == 0){
         return new SvgGroupElement();
+    } else if (QString::compare(name, "path") == 0){
+        return new SvgPath();
     }
 
     return nullptr;
@@ -68,4 +72,12 @@ QString SvgElement::getString(QXmlStreamAttributes *attribs, QString attributeNa
 SvgElement::SvgElementType SvgElement::type() const
 {
     return m_type;
+}
+
+SvgTranformStack SvgElement::parseTranform(const QString &transform, SvgTranformStack stack)
+{
+    SvgTranformParser parser;
+    m_transformStack = parser.parse(transform, stack);
+
+    return m_transformStack;
 }

@@ -25,7 +25,7 @@ public:
 private:
     QVector<SvgElement*> m_elements;
 
-    void parsingElement(QXmlStreamReader* reader);
+    void parsingElement(QXmlStreamReader* reader, SvgTranformStack stack);
 };
 
 #endif // SVGPARSER_H

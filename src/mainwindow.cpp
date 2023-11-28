@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
+#include <QDateTime>
 #include <QFile>
 #include <QFileDialog>
 #include <QMessageBox>
@@ -44,9 +45,10 @@ void MainWindow::on_btn_targetPath_clicked()
 
     ui->line_targetPath->setText(path);
 }
-
+#include <QDebug>
 void MainWindow::on_btn_exit_clicked()
 {
+    qDebug() << QString("rotate(-10 50 100) translate(-36 45.5) skewX(40) scale(1 0.5)").split(")");
     qApp->exit(0);
 }
 

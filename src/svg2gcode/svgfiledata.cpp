@@ -27,7 +27,7 @@ void SvgFileData::setInkscape_version(const QString &newInkscape_version)
     m_inkscape_version = newInkscape_version;
 }
 
-void SvgFileData::parsing(QXmlStreamReader *reader)
+void SvgFileData::parsing(QXmlStreamReader *reader, SvgTranformStack)
 {
     Logger::instance()->write(QString("Найден стартовый элемент %1, начинаем его обработку!").arg(reader->name().toString()));
     QXmlStreamAttributes attribs = reader->attributes();
@@ -36,4 +36,9 @@ void SvgFileData::parsing(QXmlStreamReader *reader)
     m_inkscape_version = SvgElement::getString(&attribs, "version");
 
     m_type = SvgElement::SvgElementType::FileData;
+}
+
+QStringList SvgFileData::gcode()
+{
+    return QStringList();
 }

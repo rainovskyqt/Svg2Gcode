@@ -16,7 +16,8 @@ public:
 
     SvgGroupElement(QObject *parent = nullptr);   ///Элемен отвечающий, что началась группа элементов
 
-    void parsing(QXmlStreamReader *reader);
+    void parsing(QXmlStreamReader *reader, SvgTranformStack stack) override;
+    QStringList gcode() override;
 
 private:
     GroupType m_groupType;

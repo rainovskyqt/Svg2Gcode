@@ -1,6 +1,8 @@
 #ifndef SVGELEMENT_H
 #define SVGELEMENT_H
 
+#include "svgtranformstack.h"
+
 #include <QString>
 #include <QObject>
 #include <QXmlStreamReader>
@@ -13,11 +15,13 @@ class SvgElement : public QObject
 
 public:
     explicit SvgElement(QObject *parent = nullptr);
-    virtual void parsing(QXmlStreamReader* reader) = 0;
+    virtual void parsing(QXmlStreamReader* reader, SvgTranformStack stack) = 0;
+    virtual QStringList gcode() = 0;
 
     enum SvgElementType{
         Group,
-        FileData
+        FileData,
+        Path
     };
 
     static SvgElement *element(const QString &name);
@@ -34,6 +38,10 @@ protected:
     QString m_ElementName;
     QString m_id;
     SvgElementType m_type;
+
+    SvgTranformStack m_transformStack;
+
+    SvgTranformStack parseTranform(const QString &transform, SvgTranformStack stack);
 };
 
 #endif // SVGELEMENT_H

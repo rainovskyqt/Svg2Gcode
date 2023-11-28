@@ -12,8 +12,6 @@ SOURCES += \
     src/main.cpp \
     src/mainwindow.cpp \
     src/svg2gcode/gcodecomments.cpp \
-    src/svg2gcode/gcodeelement.cpp \
-    src/svg2gcode/gcodefiledata.cpp \
     src/svg2gcode/gcodegenerator.cpp \
     src/svg2gcode/logger.cpp \
     src/svg2gcode/svgelement.cpp \
@@ -23,13 +21,13 @@ SOURCES += \
     src/svg2gcode/svgpath.cpp \
     src/svg2gcode/svgstyle.cpp \
     src/svg2gcode/svgtogcodeconverter.cpp \
+    src/svg2gcode/svgtranformparser.cpp \
+    src/svg2gcode/svgtranformstack.cpp \
     src/svg2gcode/tool.cpp
 
 HEADERS += \
     src/mainwindow.h \
     src/svg2gcode/gcodecomments.h \
-    src/svg2gcode/gcodeelement.h \
-    src/svg2gcode/gcodefiledata.h \
     src/svg2gcode/gcodegenerator.h \
     src/svg2gcode/logger.h \
     src/svg2gcode/svgelement.h \
@@ -39,6 +37,8 @@ HEADERS += \
     src/svg2gcode/svgpath.h \
     src/svg2gcode/svgstyle.h \
     src/svg2gcode/svgtogcodeconverter.h \
+    src/svg2gcode/svgtranformparser.h \
+    src/svg2gcode/svgtranformstack.h \
     src/svg2gcode/tool.h
 
 FORMS += \

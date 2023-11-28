@@ -18,6 +18,8 @@ SvgParser::~SvgParser()
 
 QVector<SvgElement *> SvgParser::parsing(QXmlStreamReader *reader)
 {
+    SvgTranformStack transformStack;
+
     Logger::instance()->write(QString("Старт обработки элементов"));
     while (!reader->atEnd()) {
 
@@ -29,14 +31,14 @@ QVector<SvgElement *> SvgParser::parsing(QXmlStreamReader *reader)
 
         if(type == QXmlStreamReader::StartElement)
         {
-            parsingElement(reader);
+            parsingElement(reader, transformStack);
         }
 
     }
     return m_elements;
 }
 
-void SvgParser::parsingElement(QXmlStreamReader *reader)
+void SvgParser::parsingElement(QXmlStreamReader *reader, SvgTranformStack stack)
 {
     while (!reader->atEnd())
     {
@@ -47,7 +49,7 @@ void SvgParser::parsingElement(QXmlStreamReader *reader)
 
         SvgElement *element = SvgElement::element(reader->name().toString());
         if(element != nullptr){
-            element->parsing(reader);
+            element->parsing(reader, stack);
             m_elements.push_back(element);
         }
 
@@ -55,7 +57,7 @@ void SvgParser::parsingElement(QXmlStreamReader *reader)
         QXmlStreamReader::TokenType type = reader->readNext();
         if(type == QXmlStreamReader::StartElement)
         {
-            parsingElement(reader);
+            parsingElement(reader, stack);
         }
         else if(type == QXmlStreamReader::EndElement)
         {

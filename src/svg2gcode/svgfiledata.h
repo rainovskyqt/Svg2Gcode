@@ -16,7 +16,8 @@ public:
     const QString &inkscape_version() const;
     void setInkscape_version(const QString &newInkscape_version);
 
-    void parsing(QXmlStreamReader* reader) override;
+    void parsing(QXmlStreamReader* reader, SvgTranformStack) override;
+    QStringList gcode() override;
 
 private:
     QString m_docname;
