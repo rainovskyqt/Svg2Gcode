@@ -1,0 +1,309 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Svg2Gcode: Класс SvgElement</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Svg2Gcode
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search",'Поиск','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Открытые типы</a> &#124;
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pub-static-methods">Открытые статические члены</a> &#124;
+<a href="#pro-methods">Защищенные члены</a> &#124;
+<a href="#pro-attribs">Защищенные данные</a> &#124;
+<a href="../../db/dff/class_svg_element-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle"><div class="title">Класс SvgElement<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Элемент svg файла  
+ <a href="../../d2/dd8/class_svg_element.html#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d5/d3a/svgelement_8h_source.html">svgelement.h</a>&gt;</code></p>
+<div class="dynheader">
+Граф наследования:SvgElement:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../db/dc7/class_svg_element__inherit__graph.png" border="0" usemap="#a_svg_element_inherit__map" alt="Inheritance graph"/></div>
+<map name="a_svg_element_inherit__map" id="a_svg_element_inherit__map">
+<area shape="rect" title="Элемент svg файла" alt="" coords="139,80,231,107"/>
+<area shape="rect" href="../../d3/def/class_svg_file_data.html" title="Класс для сохранения данных о файле" alt="" coords="5,155,97,181"/>
+<area shape="rect" href="../../d4/d35/class_svg_group_element.html" title=" " alt="" coords="121,155,248,181"/>
+<area shape="rect" href="../../d2/d7b/class_svg_path.html" title=" " alt="" coords="272,155,343,181"/>
+<area shape="rect" title=" " alt="" coords="149,5,220,32"/>
+</map>
+<center><span class="legend">[<a href="../../graph_legend.html">см. легенду</a>]</span></center></div>
+<div class="dynheader">
+Граф связей класса SvgElement:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d4/d69/class_svg_element__coll__graph.png" border="0" usemap="#a_svg_element_coll__map" alt="Collaboration graph"/></div>
+<map name="a_svg_element_coll__map" id="a_svg_element_coll__map">
+<area shape="rect" title="Элемент svg файла" alt="" coords="56,95,148,121"/>
+<area shape="rect" title=" " alt="" coords="5,5,76,32"/>
+<area shape="rect" href="../../dd/d87/class_svg_tranform_stack.html" title=" " alt="" coords="100,5,229,32"/>
+</map>
+<center><span class="legend">[<a href="../../graph_legend.html">см. легенду</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Открытые типы</h2></td></tr>
+<tr class="memitem:a685477a74a8b31a9711e06ed2f2720c7"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/dd8/class_svg_element.html#a685477a74a8b31a9711e06ed2f2720c7">SvgElementType</a> { <a class="el" href="../../d2/dd8/class_svg_element.html#a685477a74a8b31a9711e06ed2f2720c7a1f44d3024a3844fbe3cce5320f3e5767">Group</a>
+, <a class="el" href="../../d2/dd8/class_svg_element.html#a685477a74a8b31a9711e06ed2f2720c7a96759636bedd4249e8c6aa8c1064d90d">FileData</a>
+, <a class="el" href="../../d2/dd8/class_svg_element.html#a685477a74a8b31a9711e06ed2f2720c7a1f3a90ab467a2badfc7449ac110f4bf2">Path</a>
+ }</td></tr>
+<tr class="memdesc:a685477a74a8b31a9711e06ed2f2720c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Типы элементов  <a href="../../d2/dd8/class_svg_element.html#a685477a74a8b31a9711e06ed2f2720c7">Подробнее...</a><br /></td></tr>
+<tr class="separator:a685477a74a8b31a9711e06ed2f2720c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a1e171372b0cd361b1336cf6976291816"><td class="memItemLeft" align="right" valign="top"><a id="a1e171372b0cd361b1336cf6976291816" name="a1e171372b0cd361b1336cf6976291816"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>SvgElement</b> (QObject *parent=nullptr)</td></tr>
+<tr class="separator:a1e171372b0cd361b1336cf6976291816"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85fcd817d52c27eb6e666e8c342c513e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/dd8/class_svg_element.html#a85fcd817d52c27eb6e666e8c342c513e">parsing</a> (QXmlStreamReader *reader, <a class="el" href="../../dd/d87/class_svg_tranform_stack.html">SvgTranformStack</a> stack)=0</td></tr>
+<tr class="memdesc:a85fcd817d52c27eb6e666e8c342c513e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Разбор данных элемента  <a href="../../d2/dd8/class_svg_element.html#a85fcd817d52c27eb6e666e8c342c513e">Подробнее...</a><br /></td></tr>
+<tr class="separator:a85fcd817d52c27eb6e666e8c342c513e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a699ecb02727cf7550c2e7a50789da674"><td class="memItemLeft" align="right" valign="top">virtual QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/dd8/class_svg_element.html#a699ecb02727cf7550c2e7a50789da674">gcode</a> ()=0</td></tr>
+<tr class="separator:a699ecb02727cf7550c2e7a50789da674"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17b9b56ebc7bf385a51b9df4df14ec50"><td class="memItemLeft" align="right" valign="top"><a id="a17b9b56ebc7bf385a51b9df4df14ec50" name="a17b9b56ebc7bf385a51b9df4df14ec50"></a>
+QString&#160;</td><td class="memItemRight" valign="bottom"><b>findValue</b> (QXmlStreamAttributes *attribs, QString attributeName)</td></tr>
+<tr class="separator:a17b9b56ebc7bf385a51b9df4df14ec50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf35ac7715b32252979abde86d275d51"><td class="memItemLeft" align="right" valign="top"><a id="adf35ac7715b32252979abde86d275d51" name="adf35ac7715b32252979abde86d275d51"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>getDouble</b> (QXmlStreamAttributes *attribs, QString attributeName)</td></tr>
+<tr class="separator:adf35ac7715b32252979abde86d275d51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad08f6c60d95f9cedb0849b7d5b9c4bf5"><td class="memItemLeft" align="right" valign="top"><a id="ad08f6c60d95f9cedb0849b7d5b9c4bf5" name="ad08f6c60d95f9cedb0849b7d5b9c4bf5"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>getInt</b> (QXmlStreamAttributes *attribs, QString attributeName)</td></tr>
+<tr class="separator:ad08f6c60d95f9cedb0849b7d5b9c4bf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23814309859e995e5174800064a781ff"><td class="memItemLeft" align="right" valign="top"><a id="a23814309859e995e5174800064a781ff" name="a23814309859e995e5174800064a781ff"></a>
+QString&#160;</td><td class="memItemRight" valign="bottom"><b>getString</b> (QXmlStreamAttributes *attribs, QString attributeName)</td></tr>
+<tr class="separator:a23814309859e995e5174800064a781ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73f2f3ce4ec26052d818191ed8fa2f77"><td class="memItemLeft" align="right" valign="top"><a id="a73f2f3ce4ec26052d818191ed8fa2f77" name="a73f2f3ce4ec26052d818191ed8fa2f77"></a>
+<a class="el" href="../../d2/dd8/class_svg_element.html#a685477a74a8b31a9711e06ed2f2720c7">SvgElementType</a>&#160;</td><td class="memItemRight" valign="bottom"><b>type</b> () const</td></tr>
+<tr class="separator:a73f2f3ce4ec26052d818191ed8fa2f77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Открытые статические члены</h2></td></tr>
+<tr class="memitem:a6b05028bf9126f4e15e7cd5ea348485a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d2/dd8/class_svg_element.html">SvgElement</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/dd8/class_svg_element.html#a6b05028bf9126f4e15e7cd5ea348485a">element</a> (const QString &amp;name)</td></tr>
+<tr class="memdesc:a6b05028bf9126f4e15e7cd5ea348485a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор элемента  <a href="../../d2/dd8/class_svg_element.html#a6b05028bf9126f4e15e7cd5ea348485a">Подробнее...</a><br /></td></tr>
+<tr class="separator:a6b05028bf9126f4e15e7cd5ea348485a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Защищенные члены</h2></td></tr>
+<tr class="memitem:a99b1724461a6bd040b358eefe750a5e7"><td class="memItemLeft" align="right" valign="top"><a id="a99b1724461a6bd040b358eefe750a5e7" name="a99b1724461a6bd040b358eefe750a5e7"></a>
+<a class="el" href="../../dd/d87/class_svg_tranform_stack.html">SvgTranformStack</a>&#160;</td><td class="memItemRight" valign="bottom"><b>parseTranform</b> (const QString &amp;transform, <a class="el" href="../../dd/d87/class_svg_tranform_stack.html">SvgTranformStack</a> stack)</td></tr>
+<tr class="separator:a99b1724461a6bd040b358eefe750a5e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Защищенные данные</h2></td></tr>
+<tr class="memitem:a97c32794dcb1a8caa9058dc05c754fdd"><td class="memItemLeft" align="right" valign="top"><a id="a97c32794dcb1a8caa9058dc05c754fdd" name="a97c32794dcb1a8caa9058dc05c754fdd"></a>
+QString&#160;</td><td class="memItemRight" valign="bottom"><b>m_ElementName</b></td></tr>
+<tr class="separator:a97c32794dcb1a8caa9058dc05c754fdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8260c4ac0d99d0b64b3a2132aa13e6e"><td class="memItemLeft" align="right" valign="top"><a id="ae8260c4ac0d99d0b64b3a2132aa13e6e" name="ae8260c4ac0d99d0b64b3a2132aa13e6e"></a>
+QString&#160;</td><td class="memItemRight" valign="bottom"><b>m_id</b></td></tr>
+<tr class="separator:ae8260c4ac0d99d0b64b3a2132aa13e6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a372bc69dd84d73872da5a09f5b72b508"><td class="memItemLeft" align="right" valign="top"><a id="a372bc69dd84d73872da5a09f5b72b508" name="a372bc69dd84d73872da5a09f5b72b508"></a>
+<a class="el" href="../../d2/dd8/class_svg_element.html#a685477a74a8b31a9711e06ed2f2720c7">SvgElementType</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_type</b></td></tr>
+<tr class="separator:a372bc69dd84d73872da5a09f5b72b508"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b7c696dcdd6bd14a115d3d5cc493b93"><td class="memItemLeft" align="right" valign="top"><a id="a2b7c696dcdd6bd14a115d3d5cc493b93" name="a2b7c696dcdd6bd14a115d3d5cc493b93"></a>
+<a class="el" href="../../dd/d87/class_svg_tranform_stack.html">SvgTranformStack</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_transformStack</b></td></tr>
+<tr class="separator:a2b7c696dcdd6bd14a115d3d5cc493b93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p >Элемент svg файла </p>
+<p >Абстрактный элемент svg файла, содержит общие свойства и методы присущие всем элементам </p>
+</div><h2 class="groupheader">Перечисления</h2>
+<a id="a685477a74a8b31a9711e06ed2f2720c7" name="a685477a74a8b31a9711e06ed2f2720c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a685477a74a8b31a9711e06ed2f2720c7">&#9670;&nbsp;</a></span>SvgElementType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="../../d2/dd8/class_svg_element.html#a685477a74a8b31a9711e06ed2f2720c7">SvgElement::SvgElementType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Типы элементов </p>
+<p >Содержит список элементов svg файла, которые умеет обрабатывать </p>
+<table class="fieldtable">
+<tr><th colspan="2">Элементы перечислений</th></tr><tr><td class="fieldname"><a id="a685477a74a8b31a9711e06ed2f2720c7a1f44d3024a3844fbe3cce5320f3e5767" name="a685477a74a8b31a9711e06ed2f2720c7a1f44d3024a3844fbe3cce5320f3e5767"></a>Group&#160;</td><td class="fielddoc"><p >Общее определение группы, элемент не попадающее в другие категории </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a685477a74a8b31a9711e06ed2f2720c7a96759636bedd4249e8c6aa8c1064d90d" name="a685477a74a8b31a9711e06ed2f2720c7a96759636bedd4249e8c6aa8c1064d90d"></a>FileData&#160;</td><td class="fielddoc"><p >Данные о файле </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a685477a74a8b31a9711e06ed2f2720c7a1f3a90ab467a2badfc7449ac110f4bf2" name="a685477a74a8b31a9711e06ed2f2720c7a1f3a90ab467a2badfc7449ac110f4bf2"></a>Path&#160;</td><td class="fielddoc"><p >Элемент path <a class="el" href="../../d2/d7b/class_svg_path.html">SvgPath</a>. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a id="a6b05028bf9126f4e15e7cd5ea348485a" name="a6b05028bf9126f4e15e7cd5ea348485a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b05028bf9126f4e15e7cd5ea348485a">&#9670;&nbsp;</a></span>element()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/dd8/class_svg_element.html">SvgElement</a> * SvgElement::element </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Конструктор элемента </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>тэг элемента в файле svg файле </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Указатель на элемент</dd></dl>
+<p>Абстрактная файбрика элементов svg, строится в зависимости от наименования (тэга) элемента в svg файле, например &lt;path&gt; вернет <a class="el" href="../../d2/d7b/class_svg_path.html">SvgPath</a> </p>
+
+</div>
+</div>
+<a id="a699ecb02727cf7550c2e7a50789da674" name="a699ecb02727cf7550c2e7a50789da674"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a699ecb02727cf7550c2e7a50789da674">&#9670;&nbsp;</a></span>gcode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual QStringList SvgElement::gcode </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Замещается в <a class="el" href="../../d3/def/class_svg_file_data.html#a7cd039b4b7e52e3e598ba59a65e4019f">SvgFileData</a>.</p>
+
+</div>
+</div>
+<a id="a85fcd817d52c27eb6e666e8c342c513e" name="a85fcd817d52c27eb6e666e8c342c513e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85fcd817d52c27eb6e666e8c342c513e">&#9670;&nbsp;</a></span>parsing()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void SvgElement::parsing </td>
+          <td>(</td>
+          <td class="paramtype">QXmlStreamReader *&#160;</td>
+          <td class="paramname"><em>reader</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../dd/d87/class_svg_tranform_stack.html">SvgTranformStack</a>&#160;</td>
+          <td class="paramname"><em>stack</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Разбор данных элемента </p>
+<p >Разбор данных элемента, основная функция котрая рзбирает переданные параметры по свойствам класса объекта </p>
+
+<p>Замещается в <a class="el" href="../../d2/d7b/class_svg_path.html#a4028bf623e7f126b9ae13367de94e391">SvgPath</a>, <a class="el" href="../../d4/d35/class_svg_group_element.html#ae0a1c4383e599a46224b1575e4f4884d">SvgGroupElement</a> и <a class="el" href="../../d3/def/class_svg_file_data.html#a5b2ef3cac3a99fac331b26359bd8be9d">SvgFileData</a>.</p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>/home/rainovsky/Projects/Svg2Gcode/src/<a class="el" href="../../d5/d3a/svgelement_8h_source.html">svgelement.h</a></li>
+<li>/home/rainovsky/Projects/Svg2Gcode/src/svgelement.cpp</li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

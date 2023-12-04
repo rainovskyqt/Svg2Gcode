@@ -9,40 +9,42 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    src/main.cpp \
-    src/mainwindow.cpp \
-    src/svg2gcode/gcodecomments.cpp \
-    src/svg2gcode/gcodegenerator.cpp \
-    src/svg2gcode/logger.cpp \
-    src/svg2gcode/svgelement.cpp \
-    src/svg2gcode/svgfiledata.cpp \
-    src/svg2gcode/svggroupelement.cpp \
-    src/svg2gcode/svgparser.cpp \
-    src/svg2gcode/svgpath.cpp \
-    src/svg2gcode/svgstyle.cpp \
-    src/svg2gcode/svgtogcodeconverter.cpp \
-    src/svg2gcode/svgtranformparser.cpp \
-    src/svg2gcode/svgtranformstack.cpp \
-    src/svg2gcode/tool.cpp
+    giu/main.cpp \
+    giu/mainwindow.cpp \
+    src/gcodecomments.cpp \
+    src/gcodegenerator.cpp \
+    src/logger.cpp \
+    src/svgelement.cpp \
+    src/svgemptyelement.cpp \
+    src/svgfiledata.cpp \
+    src/svggroupelement.cpp \
+    src/svgparser.cpp \
+    src/svgpath.cpp \
+    src/svgstyle.cpp \
+    src/svgtogcodeconverter.cpp \
+    src/svgtranformparser.cpp \
+    src/svgtranformstack.cpp \
+    src/tool.cpp
 
 HEADERS += \
-    src/mainwindow.h \
-    src/svg2gcode/gcodecomments.h \
-    src/svg2gcode/gcodegenerator.h \
-    src/svg2gcode/logger.h \
-    src/svg2gcode/svgelement.h \
-    src/svg2gcode/svgfiledata.h \
-    src/svg2gcode/svggroupelement.h \
-    src/svg2gcode/svgparser.h \
-    src/svg2gcode/svgpath.h \
-    src/svg2gcode/svgstyle.h \
-    src/svg2gcode/svgtogcodeconverter.h \
-    src/svg2gcode/svgtranformparser.h \
-    src/svg2gcode/svgtranformstack.h \
-    src/svg2gcode/tool.h
+    giu/mainwindow.h \
+    src/gcodecomments.h \
+    src/gcodegenerator.h \
+    src/logger.h \
+    src/svgelement.h \
+    src/svgemptyelement.h \
+    src/svgfiledata.h \
+    src/svggroupelement.h \
+    src/svgparser.h \
+    src/svgpath.h \
+    src/svgstyle.h \
+    src/svgtogcodeconverter.h \
+    src/svgtranformparser.h \
+    src/svgtranformstack.h \
+    src/tool.h
 
 FORMS += \
-    src/mainwindow.ui
+    giu/mainwindow.ui
 
 
 # Default rules for deployment.

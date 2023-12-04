@@ -1,0 +1,262 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Svg2Gcode: Класс SvgGroupElement</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Svg2Gcode
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search",'Поиск','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Открытые типы</a> &#124;
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pri-methods">Закрытые члены</a> &#124;
+<a href="#pri-attribs">Закрытые данные</a> &#124;
+<a href="../../dd/d2e/class_svg_group_element-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle"><div class="title">Класс SvgGroupElement</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="dynheader">
+Граф наследования:SvgGroupElement:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/d8e/class_svg_group_element__inherit__graph.png" border="0" usemap="#a_svg_group_element_inherit__map" alt="Inheritance graph"/></div>
+<map name="a_svg_group_element_inherit__map" id="a_svg_group_element_inherit__map">
+<area shape="rect" title=" " alt="" coords="5,155,132,181"/>
+<area shape="rect" href="../../d2/dd8/class_svg_element.html" title="Элемент svg файла" alt="" coords="23,80,115,107"/>
+<area shape="rect" title=" " alt="" coords="33,5,104,32"/>
+</map>
+<center><span class="legend">[<a href="../../graph_legend.html">см. легенду</a>]</span></center></div>
+<div class="dynheader">
+Граф связей класса SvgGroupElement:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d7/d01/class_svg_group_element__coll__graph.png" border="0" usemap="#a_svg_group_element_coll__map" alt="Collaboration graph"/></div>
+<map name="a_svg_group_element_coll__map" id="a_svg_group_element_coll__map">
+<area shape="rect" title=" " alt="" coords="39,171,165,197"/>
+<area shape="rect" href="../../d2/dd8/class_svg_element.html" title="Элемент svg файла" alt="" coords="56,95,148,121"/>
+<area shape="rect" title=" " alt="" coords="5,5,76,32"/>
+<area shape="rect" href="../../dd/d87/class_svg_tranform_stack.html" title=" " alt="" coords="100,5,229,32"/>
+</map>
+<center><span class="legend">[<a href="../../graph_legend.html">см. легенду</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Открытые типы</h2></td></tr>
+<tr class="memitem:a73d704c0ee2a5f3cf4f2fd68a8993619"><td class="memItemLeft" align="right" valign="top"><a id="a73d704c0ee2a5f3cf4f2fd68a8993619" name="a73d704c0ee2a5f3cf4f2fd68a8993619"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>GroupType</b> { <b>Layer</b>
+, <b>Group</b>
+ }</td></tr>
+<tr class="separator:a73d704c0ee2a5f3cf4f2fd68a8993619"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_types_class_svg_element"><td colspan="2" onclick="javascript:toggleInherit('pub_types_class_svg_element')"><img src="../../closed.png" alt="-"/>&#160;Открытые типы унаследованные от <a class="el" href="../../d2/dd8/class_svg_element.html">SvgElement</a></td></tr>
+<tr class="memitem:a685477a74a8b31a9711e06ed2f2720c7 inherit pub_types_class_svg_element"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/dd8/class_svg_element.html#a685477a74a8b31a9711e06ed2f2720c7">SvgElementType</a> { <a class="el" href="../../d2/dd8/class_svg_element.html#a685477a74a8b31a9711e06ed2f2720c7a1f44d3024a3844fbe3cce5320f3e5767">Group</a>
+, <a class="el" href="../../d2/dd8/class_svg_element.html#a685477a74a8b31a9711e06ed2f2720c7a96759636bedd4249e8c6aa8c1064d90d">FileData</a>
+, <a class="el" href="../../d2/dd8/class_svg_element.html#a685477a74a8b31a9711e06ed2f2720c7a1f3a90ab467a2badfc7449ac110f4bf2">Path</a>
+ }</td></tr>
+<tr class="memdesc:a685477a74a8b31a9711e06ed2f2720c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Типы элементов  <a href="../../d2/dd8/class_svg_element.html#a685477a74a8b31a9711e06ed2f2720c7">Подробнее...</a><br /></td></tr>
+<tr class="separator:a685477a74a8b31a9711e06ed2f2720c7 inherit pub_types_class_svg_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a56d52ffe22c3d2ebde51ec56f60062c2"><td class="memItemLeft" align="right" valign="top"><a id="a56d52ffe22c3d2ebde51ec56f60062c2" name="a56d52ffe22c3d2ebde51ec56f60062c2"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>SvgGroupElement</b> (QObject *parent=nullptr)</td></tr>
+<tr class="separator:a56d52ffe22c3d2ebde51ec56f60062c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0a1c4383e599a46224b1575e4f4884d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d35/class_svg_group_element.html#ae0a1c4383e599a46224b1575e4f4884d">parsing</a> (QXmlStreamReader *reader, <a class="el" href="../../dd/d87/class_svg_tranform_stack.html">SvgTranformStack</a> stack) override</td></tr>
+<tr class="memdesc:ae0a1c4383e599a46224b1575e4f4884d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Элемен отвечающий, что началась группа элементов  <a href="../../d4/d35/class_svg_group_element.html#ae0a1c4383e599a46224b1575e4f4884d">Подробнее...</a><br /></td></tr>
+<tr class="separator:ae0a1c4383e599a46224b1575e4f4884d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69714f1600a4159647758fcf4362a201"><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d35/class_svg_group_element.html#a69714f1600a4159647758fcf4362a201">gcode</a> () override</td></tr>
+<tr class="separator:a69714f1600a4159647758fcf4362a201"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_svg_element"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_svg_element')"><img src="../../closed.png" alt="-"/>&#160;Открытые члены унаследованные от <a class="el" href="../../d2/dd8/class_svg_element.html">SvgElement</a></td></tr>
+<tr class="memitem:a1e171372b0cd361b1336cf6976291816 inherit pub_methods_class_svg_element"><td class="memItemLeft" align="right" valign="top"><a id="a1e171372b0cd361b1336cf6976291816" name="a1e171372b0cd361b1336cf6976291816"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>SvgElement</b> (QObject *parent=nullptr)</td></tr>
+<tr class="separator:a1e171372b0cd361b1336cf6976291816 inherit pub_methods_class_svg_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85fcd817d52c27eb6e666e8c342c513e inherit pub_methods_class_svg_element"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/dd8/class_svg_element.html#a85fcd817d52c27eb6e666e8c342c513e">parsing</a> (QXmlStreamReader *reader, <a class="el" href="../../dd/d87/class_svg_tranform_stack.html">SvgTranformStack</a> stack)=0</td></tr>
+<tr class="memdesc:a85fcd817d52c27eb6e666e8c342c513e inherit pub_methods_class_svg_element"><td class="mdescLeft">&#160;</td><td class="mdescRight">Разбор данных элемента  <a href="../../d2/dd8/class_svg_element.html#a85fcd817d52c27eb6e666e8c342c513e">Подробнее...</a><br /></td></tr>
+<tr class="separator:a85fcd817d52c27eb6e666e8c342c513e inherit pub_methods_class_svg_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a699ecb02727cf7550c2e7a50789da674 inherit pub_methods_class_svg_element"><td class="memItemLeft" align="right" valign="top">virtual QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/dd8/class_svg_element.html#a699ecb02727cf7550c2e7a50789da674">gcode</a> ()=0</td></tr>
+<tr class="separator:a699ecb02727cf7550c2e7a50789da674 inherit pub_methods_class_svg_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17b9b56ebc7bf385a51b9df4df14ec50 inherit pub_methods_class_svg_element"><td class="memItemLeft" align="right" valign="top"><a id="a17b9b56ebc7bf385a51b9df4df14ec50" name="a17b9b56ebc7bf385a51b9df4df14ec50"></a>
+QString&#160;</td><td class="memItemRight" valign="bottom"><b>findValue</b> (QXmlStreamAttributes *attribs, QString attributeName)</td></tr>
+<tr class="separator:a17b9b56ebc7bf385a51b9df4df14ec50 inherit pub_methods_class_svg_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf35ac7715b32252979abde86d275d51 inherit pub_methods_class_svg_element"><td class="memItemLeft" align="right" valign="top"><a id="adf35ac7715b32252979abde86d275d51" name="adf35ac7715b32252979abde86d275d51"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>getDouble</b> (QXmlStreamAttributes *attribs, QString attributeName)</td></tr>
+<tr class="separator:adf35ac7715b32252979abde86d275d51 inherit pub_methods_class_svg_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad08f6c60d95f9cedb0849b7d5b9c4bf5 inherit pub_methods_class_svg_element"><td class="memItemLeft" align="right" valign="top"><a id="ad08f6c60d95f9cedb0849b7d5b9c4bf5" name="ad08f6c60d95f9cedb0849b7d5b9c4bf5"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>getInt</b> (QXmlStreamAttributes *attribs, QString attributeName)</td></tr>
+<tr class="separator:ad08f6c60d95f9cedb0849b7d5b9c4bf5 inherit pub_methods_class_svg_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23814309859e995e5174800064a781ff inherit pub_methods_class_svg_element"><td class="memItemLeft" align="right" valign="top"><a id="a23814309859e995e5174800064a781ff" name="a23814309859e995e5174800064a781ff"></a>
+QString&#160;</td><td class="memItemRight" valign="bottom"><b>getString</b> (QXmlStreamAttributes *attribs, QString attributeName)</td></tr>
+<tr class="separator:a23814309859e995e5174800064a781ff inherit pub_methods_class_svg_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73f2f3ce4ec26052d818191ed8fa2f77 inherit pub_methods_class_svg_element"><td class="memItemLeft" align="right" valign="top"><a id="a73f2f3ce4ec26052d818191ed8fa2f77" name="a73f2f3ce4ec26052d818191ed8fa2f77"></a>
+<a class="el" href="../../d2/dd8/class_svg_element.html#a685477a74a8b31a9711e06ed2f2720c7">SvgElementType</a>&#160;</td><td class="memItemRight" valign="bottom"><b>type</b> () const</td></tr>
+<tr class="separator:a73f2f3ce4ec26052d818191ed8fa2f77 inherit pub_methods_class_svg_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Закрытые члены</h2></td></tr>
+<tr class="memitem:a83eb5126e8e65eee84bdf63ec019fc68"><td class="memItemLeft" align="right" valign="top"><a id="a83eb5126e8e65eee84bdf63ec019fc68" name="a83eb5126e8e65eee84bdf63ec019fc68"></a>
+GroupType&#160;</td><td class="memItemRight" valign="bottom"><b>getGroupType</b> (const QString &amp;id)</td></tr>
+<tr class="separator:a83eb5126e8e65eee84bdf63ec019fc68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Закрытые данные</h2></td></tr>
+<tr class="memitem:a14e7676070bd02b6bc3d265f6d1dcf33"><td class="memItemLeft" align="right" valign="top"><a id="a14e7676070bd02b6bc3d265f6d1dcf33" name="a14e7676070bd02b6bc3d265f6d1dcf33"></a>
+GroupType&#160;</td><td class="memItemRight" valign="bottom"><b>m_groupType</b></td></tr>
+<tr class="separator:a14e7676070bd02b6bc3d265f6d1dcf33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad40a8a935c986696e135b71f71e310f1"><td class="memItemLeft" align="right" valign="top"><a id="ad40a8a935c986696e135b71f71e310f1" name="ad40a8a935c986696e135b71f71e310f1"></a>
+QString&#160;</td><td class="memItemRight" valign="bottom"><b>m_label</b></td></tr>
+<tr class="separator:ad40a8a935c986696e135b71f71e310f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+Дополнительные унаследованные члены</h2></td></tr>
+<tr class="inherit_header pub_static_methods_class_svg_element"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_class_svg_element')"><img src="../../closed.png" alt="-"/>&#160;Открытые статические члены унаследованные от <a class="el" href="../../d2/dd8/class_svg_element.html">SvgElement</a></td></tr>
+<tr class="memitem:a6b05028bf9126f4e15e7cd5ea348485a inherit pub_static_methods_class_svg_element"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d2/dd8/class_svg_element.html">SvgElement</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/dd8/class_svg_element.html#a6b05028bf9126f4e15e7cd5ea348485a">element</a> (const QString &amp;name)</td></tr>
+<tr class="memdesc:a6b05028bf9126f4e15e7cd5ea348485a inherit pub_static_methods_class_svg_element"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор элемента  <a href="../../d2/dd8/class_svg_element.html#a6b05028bf9126f4e15e7cd5ea348485a">Подробнее...</a><br /></td></tr>
+<tr class="separator:a6b05028bf9126f4e15e7cd5ea348485a inherit pub_static_methods_class_svg_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_class_svg_element"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_svg_element')"><img src="../../closed.png" alt="-"/>&#160;Защищенные члены унаследованные от <a class="el" href="../../d2/dd8/class_svg_element.html">SvgElement</a></td></tr>
+<tr class="memitem:a99b1724461a6bd040b358eefe750a5e7 inherit pro_methods_class_svg_element"><td class="memItemLeft" align="right" valign="top"><a id="a99b1724461a6bd040b358eefe750a5e7" name="a99b1724461a6bd040b358eefe750a5e7"></a>
+<a class="el" href="../../dd/d87/class_svg_tranform_stack.html">SvgTranformStack</a>&#160;</td><td class="memItemRight" valign="bottom"><b>parseTranform</b> (const QString &amp;transform, <a class="el" href="../../dd/d87/class_svg_tranform_stack.html">SvgTranformStack</a> stack)</td></tr>
+<tr class="separator:a99b1724461a6bd040b358eefe750a5e7 inherit pro_methods_class_svg_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_class_svg_element"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_svg_element')"><img src="../../closed.png" alt="-"/>&#160;Защищенные данные унаследованные от <a class="el" href="../../d2/dd8/class_svg_element.html">SvgElement</a></td></tr>
+<tr class="memitem:a97c32794dcb1a8caa9058dc05c754fdd inherit pro_attribs_class_svg_element"><td class="memItemLeft" align="right" valign="top"><a id="a97c32794dcb1a8caa9058dc05c754fdd" name="a97c32794dcb1a8caa9058dc05c754fdd"></a>
+QString&#160;</td><td class="memItemRight" valign="bottom"><b>m_ElementName</b></td></tr>
+<tr class="separator:a97c32794dcb1a8caa9058dc05c754fdd inherit pro_attribs_class_svg_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8260c4ac0d99d0b64b3a2132aa13e6e inherit pro_attribs_class_svg_element"><td class="memItemLeft" align="right" valign="top"><a id="ae8260c4ac0d99d0b64b3a2132aa13e6e" name="ae8260c4ac0d99d0b64b3a2132aa13e6e"></a>
+QString&#160;</td><td class="memItemRight" valign="bottom"><b>m_id</b></td></tr>
+<tr class="separator:ae8260c4ac0d99d0b64b3a2132aa13e6e inherit pro_attribs_class_svg_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a372bc69dd84d73872da5a09f5b72b508 inherit pro_attribs_class_svg_element"><td class="memItemLeft" align="right" valign="top"><a id="a372bc69dd84d73872da5a09f5b72b508" name="a372bc69dd84d73872da5a09f5b72b508"></a>
+<a class="el" href="../../d2/dd8/class_svg_element.html#a685477a74a8b31a9711e06ed2f2720c7">SvgElementType</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_type</b></td></tr>
+<tr class="separator:a372bc69dd84d73872da5a09f5b72b508 inherit pro_attribs_class_svg_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b7c696dcdd6bd14a115d3d5cc493b93 inherit pro_attribs_class_svg_element"><td class="memItemLeft" align="right" valign="top"><a id="a2b7c696dcdd6bd14a115d3d5cc493b93" name="a2b7c696dcdd6bd14a115d3d5cc493b93"></a>
+<a class="el" href="../../dd/d87/class_svg_tranform_stack.html">SvgTranformStack</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_transformStack</b></td></tr>
+<tr class="separator:a2b7c696dcdd6bd14a115d3d5cc493b93 inherit pro_attribs_class_svg_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Методы</h2>
+<a id="a69714f1600a4159647758fcf4362a201" name="a69714f1600a4159647758fcf4362a201"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69714f1600a4159647758fcf4362a201">&#9670;&nbsp;</a></span>gcode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStringList SvgGroupElement::gcode </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Замещает <a class="el" href="../../d2/dd8/class_svg_element.html">SvgElement</a>.</p>
+
+</div>
+</div>
+<a id="ae0a1c4383e599a46224b1575e4f4884d" name="ae0a1c4383e599a46224b1575e4f4884d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0a1c4383e599a46224b1575e4f4884d">&#9670;&nbsp;</a></span>parsing()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SvgGroupElement::parsing </td>
+          <td>(</td>
+          <td class="paramtype">QXmlStreamReader *&#160;</td>
+          <td class="paramname"><em>reader</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../dd/d87/class_svg_tranform_stack.html">SvgTranformStack</a>&#160;</td>
+          <td class="paramname"><em>stack</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Элемен отвечающий, что началась группа элементов </p>
+
+<p>Замещает <a class="el" href="../../d2/dd8/class_svg_element.html#a85fcd817d52c27eb6e666e8c342c513e">SvgElement</a>.</p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>/home/rainovsky/Projects/Svg2Gcode/src/<a class="el" href="../../d4/dd5/svggroupelement_8h_source.html">svggroupelement.h</a></li>
+<li>/home/rainovsky/Projects/Svg2Gcode/src/svggroupelement.cpp</li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

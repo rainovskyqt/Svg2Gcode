@@ -1,0 +1,10 @@
+<map id="Иерархия классов. Графический вид." name="Иерархия классов. Графический вид.">
+<area shape="rect" id="node1" title=" " alt="" coords="5,81,76,108"/>
+<area shape="rect" id="node2" href="$d2/d6a/class_gcode_generator.html" title=" " alt="" coords="124,5,241,32"/>
+<area shape="rect" id="node3" href="$d3/d42/class_logger.html" title=" " alt="" coords="152,56,213,83"/>
+<area shape="rect" id="node4" href="$d2/dd8/class_svg_element.html" title="Элемент svg файла" alt="" coords="137,107,229,133"/>
+<area shape="rect" id="node8" href="$d0/d1c/class_svg_parser.html" title="Класс разбирающий svg файл на составные элементы" alt="" coords="141,157,224,184"/>
+<area shape="rect" id="node5" href="$d3/def/class_svg_file_data.html" title="Класс для сохранения данных о файле" alt="" coords="307,56,399,83"/>
+<area shape="rect" id="node6" href="$d4/d35/class_svg_group_element.html" title=" " alt="" coords="289,107,416,133"/>
+<area shape="rect" id="node7" href="$d2/d7b/class_svg_path.html" title=" " alt="" coords="317,157,388,184"/>
+</map>
