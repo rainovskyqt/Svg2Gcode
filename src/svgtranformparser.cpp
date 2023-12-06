@@ -3,10 +3,12 @@
 #include <QString>
 
 
-Command::Command(const QString &command, const QString &value)
+Command::Command(const QString &command, const QStringList &value)
 {
     m_command = command.simplified();
-    m_value = value.simplified();
+    foreach (QString val, value) {
+        m_value.append(val.toDouble());
+    }
 }
 
 QString Command::command() const
@@ -14,7 +16,7 @@ QString Command::command() const
     return m_command;
 }
 
-QString Command::value() const
+QVector<double> Command::value() const
 {
     return m_value;
 }
@@ -44,19 +46,33 @@ SvgTranformStack SvgTranformParser::parse(const QString &input, const SvgTranfor
 
 QStringList SvgTranformParser::allCommandsFromString(const QString &input)
 {
-    return input.split(")", QString::SkipEmptyParts);
+    return input.simplified().split(")", QString::SkipEmptyParts);
 }
 
 Command SvgTranformParser::commandFromString(const QString &input)
 {
     QStringList comTmp = input.split("(", QString::SkipEmptyParts);
-    return Command(comTmp.at(0), comTmp.at(1));
+    QRegExp separator(",|\\s");
+
+    return Command(comTmp.at(0), comTmp.at(1).split(separator, QString::SkipEmptyParts));
 }
 
 void SvgTranformParser::addComand(Command comm, SvgTranformStack* stack)
 {
-    Transformation transform();
-    // stack->
+    if(QString::compare(comm.command(), "rotate", Qt::CaseInsensitive) == 0){
+        switch(comm.value().length())
+        {
+        case 1:
+            stack->pushRotate(comm.value().at(0));
+            break;
+        case 2:
+            stack->pushRotate(comm.value().at(0), comm.value().at(1), comm.value().at(1));
+            break;
+        case 3:
+            stack->pushRotate(comm.value().at(0), comm.value().at(1), comm.value().at(2));
+            break;
+        }
+    }
 }
 
 

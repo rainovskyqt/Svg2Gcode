@@ -1,0 +1,21 @@
+(Convertered 2023-12-06 17:45 form docfile: )
+Ellipse
+Ellipse
+Ellipse
+Line
+Line
+Line
+Line
+Line
+Line
+Ellipse
+Ellipse
+Ellipse
+Ellipse
+Ellipse
+Ellipse
+Circle
+Circle
+Ellipse
+Line
+Line

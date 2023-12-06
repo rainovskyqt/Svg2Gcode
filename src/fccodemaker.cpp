@@ -1,40 +1,36 @@
-#include "svgtogcodeconverter.h"
-
-#include <QFile>
-
+#include "fccodemaker.h"
 #include "gcodegenerator.h"
-#include "logger.h"
 #include "svgparser.h"
 
-SvgToGcodeConverter::SvgToGcodeConverter()
-{
+FCCodeMaker::FCCodeMaker(QObject *parent)
+    : QObject{parent}
+{}
 
-}
 
-QStringList SvgToGcodeConverter::convert(QXmlStreamReader *reader)
+QString FCCodeMaker::convert(QXmlStreamReader *reader)
 {
     SvgParser parcer;
-    QVector<SvgElement *> elements = parcer.parsing(reader);
+    SvgElement *rootElement = parcer.parsing(reader);
 
     GcodeGenerator generator;
-    QStringList gcode = generator.genarate(elements);
+    QString gcode = generator.genarate(rootElement);
 
     return gcode;
 }
 
-QStringList SvgToGcodeConverter::convert(QByteArray bytes)
+QString FCCodeMaker::convert(QByteArray bytes)
 {
     QXmlStreamReader reader(bytes);
     return convert(&reader);
 }
 
-QStringList SvgToGcodeConverter::convert(const QString &filePath, QString &errorString)
+QString FCCodeMaker::convert(const QString &filePath, QString &errorString)
 {
     QFile svgFile(filePath);
     if(!svgFile.open(QIODevice::ReadOnly)){
         errorString = QString("Ошибка открытия файла: %1").arg(svgFile.errorString());
         Logger::instance()->write(errorString);
-        return QStringList();
+        return "";
     }
 
     QByteArray svgData = svgFile.readAll();

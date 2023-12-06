@@ -9,27 +9,13 @@ GcodeGenerator::GcodeGenerator(QObject *parent)
 {
 }
 
-QStringList GcodeGenerator::genarate(QVector<SvgElement *> svgElementsList)
+QString GcodeGenerator::genarate(SvgElement* rootElement)
 {
-//    if(!m_gcodeFile->open(QIODevice::Text|QIODevice::WriteOnly)){
-//            Logger::instance()->write(QString("Ошибка отрытия файла для записи gcode: %1").arg(m_gcodeFile->errorString()));
-//            return false;
-//    }
+    QString gcode;
 
-//    for(int i = 0; i < svgElementsList.count(); ++i){
-//        GcodeElement* gcodeElement = GcodeElementFactory().gcodeElement(svgElementsList.at(i));
+    gcode.append(rootElement->gcode());
 
-//        if(gcodeElement == nullptr)
-//            continue;
+    rootElement->deleteLater();
 
-//        QByteArray array = gcodeElement->generate();
-//        m_gcodeFile->write(gcodeElement->generate());
-//    }
-
-//    m_gcodeFile->close();
-
-//   delete m_gcodeFile;
-
-//    return true;
-return QStringList();
+    return gcode;
 }

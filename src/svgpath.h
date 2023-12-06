@@ -11,7 +11,12 @@ public:
     explicit SvgPath(QObject *parent = nullptr);
 
     void parsing(QXmlStreamReader* reader, const SvgTranformStack stack) override;
-    QStringList gcode() override;
+
+    /*!
+    * \brief Строка gcode
+    * \return Строка gcode сформированная по свойствам элемента
+    */
+    QString gcode() override;
 
 private:
     QPointF m_start;

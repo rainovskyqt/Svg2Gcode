@@ -1,16 +1,12 @@
-#ifndef SVGEMPTYELEMENT_H
-#define SVGEMPTYELEMENT_H
-
-/*!
- * \brief Пустой класс, используется как заглушка для необрабатываемых элементов
- */
+#ifndef SVGLINE_H
+#define SVGLINE_H
 
 #include "svgelement.h"
 
-class SvgEmptyElement : public SvgElement
+class SvgLine : public SvgElement
 {
 public:
-    explicit SvgEmptyElement(QObject *parent = nullptr);
+    explicit SvgLine(QObject *parent = nullptr);
 
     /*!
     * \brief Разбор данных элемента
@@ -26,4 +22,4 @@ public:
     QString gcode() override;
 };
 
-#endif // SVGEMPTYELEMENT_H
+#endif // SVGLINE_H

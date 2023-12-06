@@ -11,34 +11,40 @@ CONFIG += c++17
 SOURCES += \
     giu/main.cpp \
     giu/mainwindow.cpp \
+    src/fccodemaker.cpp \
     src/gcodecomments.cpp \
     src/gcodegenerator.cpp \
     src/logger.cpp \
+    src/svgcircle.cpp \
     src/svgelement.cpp \
+    src/svgellipse.cpp \
     src/svgemptyelement.cpp \
     src/svgfiledata.cpp \
     src/svggroupelement.cpp \
+    src/svgline.cpp \
     src/svgparser.cpp \
     src/svgpath.cpp \
     src/svgstyle.cpp \
-    src/svgtogcodeconverter.cpp \
     src/svgtranformparser.cpp \
     src/svgtranformstack.cpp \
     src/tool.cpp
 
 HEADERS += \
     giu/mainwindow.h \
+    src/fccodemaker.h \
     src/gcodecomments.h \
     src/gcodegenerator.h \
     src/logger.h \
+    src/svgcircle.h \
     src/svgelement.h \
+    src/svgellipse.h \
     src/svgemptyelement.h \
     src/svgfiledata.h \
     src/svggroupelement.h \
+    src/svgline.h \
     src/svgparser.h \
     src/svgpath.h \
     src/svgstyle.h \
-    src/svgtogcodeconverter.h \
     src/svgtranformparser.h \
     src/svgtranformstack.h \
     src/tool.h

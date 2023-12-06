@@ -1,10 +1,12 @@
 #include "svgfiledata.h"
 #include <QDebug>
+#include <QDateTime>
 #include "logger.h"
+#include "gcodecomments.h"
 
 SvgFileData::SvgFileData()
 {
-
+    m_type = SvgElementType::FileData;
 }
 
 const QString &SvgFileData::docname() const
@@ -34,11 +36,18 @@ void SvgFileData::parsing(QXmlStreamReader *reader, SvgTranformStack)
     m_id = SvgElement::getString(&attribs, "id");
     m_docname = SvgElement::getString(&attribs, "docname");
     m_inkscape_version = SvgElement::getString(&attribs, "version");
-
-    m_type = SvgElement::SvgElementType::FileData;
 }
 
-QStringList SvgFileData::gcode()
+QString SvgFileData::gcode()
 {
-    return QStringList();
+    QString gcode;
+    gcode.append(GCodeComments().toString(QString("Convertered %1 form docfile: %2")
+                                              .arg(QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm"), m_docname)));
+
+    foreach (SvgElement* element, m_elements) {
+        gcode.append(element->gcode());
+        element->deleteLater();
+    }
+
+    return gcode;
 }

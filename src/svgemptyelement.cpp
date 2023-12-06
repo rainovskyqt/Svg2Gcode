@@ -2,15 +2,19 @@
 
 SvgEmptyElement::SvgEmptyElement(QObject *parent)
     : SvgElement{parent}
-{}
+{
+        m_type = SvgElementType::Empty;
+}
 
 void SvgEmptyElement::parsing(QXmlStreamReader *reader, SvgTranformStack stack)
 {
-    Q_UNUSED(reader)
     Q_UNUSED(stack)
+
+    QXmlStreamAttributes attribs = reader->attributes();
+    m_id = SvgElement::getString(&attribs, "id");
 }
 
-QStringList SvgEmptyElement::gcode()
+QString SvgEmptyElement::gcode()
 {
-    return QStringList();
+    return "";
 }

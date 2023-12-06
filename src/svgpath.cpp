@@ -1,21 +1,27 @@
 #include "svgpath.h"
-#include "qdebug.h"
 
 SvgPath::SvgPath(QObject *parent)
     : SvgElement{parent}
 {
-
+    m_type = SvgElementType::Path;
 }
 
 void SvgPath::parsing(QXmlStreamReader *reader, const SvgTranformStack stack)
 {
     QXmlStreamAttributes attribs = reader->attributes();
     m_id = SvgElement::getString(&attribs, "id");
-    m_type = SvgElement::SvgElementType::Path;
     m_transformStack = parseTranform(getString(&attribs, "transform"), stack);
 }
 
-QStringList SvgPath::gcode()
+QString SvgPath::gcode()
 {
-return QStringList();
+    QString gcode;
+
+    foreach (SvgElement* element, m_elements) {
+        gcode.append(element->gcode());
+        element->deleteLater();
+    }
+    gcode.append("Path\n");
+
+    return gcode;
 }

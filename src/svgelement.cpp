@@ -5,6 +5,9 @@
 #include "svgfiledata.h"
 #include "svggroupelement.h"
 #include "svgtranformparser.h"
+#include "svgellipse.h"
+#include "svgline.h"
+#include "svgcircle.h"
 
 SvgElement::SvgElement(QObject *parent)
     : QObject(parent)
@@ -14,15 +17,29 @@ SvgElement::SvgElement(QObject *parent)
 
 SvgElement *SvgElement::element(const QString &name)
 {
+    if(name == "")
+        return nullptr;
+
     Logger::instance()->write(QString("Обраружен элемент %1").arg(name));
 
-    if(QString::compare(name, "svg") == 0){
+    if (QString::compare(name, "svg", Qt::CaseInsensitive) == 0){
         Logger::instance()->write(QString("Создали svg элемент SvgFileData"));
         return new SvgFileData();
-    } else if (QString::compare(name, "g") == 0){
+    } else if (QString::compare(name, "g", Qt::CaseInsensitive) == 0){
         return new SvgGroupElement();
-    } else if (QString::compare(name, "path") == 0){
+        Logger::instance()->write(QString("Создали svg элемент группы"));
+    } else if (QString::compare(name, "path", Qt::CaseInsensitive) == 0){
+        Logger::instance()->write(QString("Создали svg элемент path"));
         return new SvgPath();
+    } else if (QString::compare(name, "ellipse", Qt::CaseInsensitive) == 0){
+        Logger::instance()->write(QString("Создали svg элемент ellipse"));
+        return new SvgEllipse();
+    } else if (QString::compare(name, "line", Qt::CaseInsensitive) == 0){
+            Logger::instance()->write(QString("Создали svg элемент line"));
+            return new SvgLine();
+    } else if (QString::compare(name, "circle", Qt::CaseInsensitive) == 0){
+        Logger::instance()->write(QString("Создали svg элемент circle"));
+        return new SvgCircle();
     }
 
     return new SvgEmptyElement();
@@ -31,6 +48,7 @@ SvgElement *SvgElement::element(const QString &name)
 QString SvgElement::findValue(QXmlStreamAttributes *attribs, QString attributeName)
 {
     QString at = "";
+
     foreach(const QXmlStreamAttribute &attr, *attribs)
     {
         if(QString::compare(attributeName, attr.name().toString(), Qt::CaseInsensitive) == 0)
@@ -79,6 +97,11 @@ SvgElement::SvgElementType SvgElement::type() const
 void SvgElement::addСhild(SvgElement *element)
 {
     m_elements.append(element);
+}
+
+QVector<SvgElement *> SvgElement::elements()
+{
+    return m_elements;
 }
 
 SvgTranformStack SvgElement::parseTranform(const QString &transform, SvgTranformStack stack)

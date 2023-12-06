@@ -12,13 +12,13 @@ struct Command
 {
 public:
 
-    explicit Command(const QString &command, const QString &value);
+    explicit Command(const QString &command, const QStringList &value);
 
     /*!
      * \brief Параметры команды транформации
      * \return Параметры команды транформации
      */
-    QString value() const;
+    QVector<double> value() const;
 
     /*!
      * \brief Команда транформации
@@ -35,7 +35,7 @@ private:
     /*!
      * \brief Параметры команды транформации
      */
-    QString m_value;
+    QVector<double> m_value;
 };
 
 class SvgTranformParser

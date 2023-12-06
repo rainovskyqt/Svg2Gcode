@@ -7,9 +7,7 @@
 #include <QMessageBox>
 #include <QXmlStreamReader>
 
-#include "svg2gcode/gcodegenerator.h"
-
-#include <src/svg2gcode/svgtogcodeconverter.h>
+#include "src/fccodemaker.h"
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -60,9 +58,9 @@ void MainWindow::on_btn_start_clicked()
     setLogFile();
 
     QString errorString;
-    SvgToGcodeConverter converter;
+    FCCodeMaker converter;
 
-    QStringList gcode = converter.convert(ui->line_sourcePath->text(), errorString);
+    QString gcode = converter.convert(ui->line_sourcePath->text(), errorString);
 
     if(!errorString.isEmpty()){
         Logger::instance()->write(errorString);
@@ -76,7 +74,7 @@ void MainWindow::on_btn_start_clicked()
         return;
     }
 
-    dest.write(gcode.join("\n").toLatin1());
+    dest.write(gcode.toLatin1());
     dest.close();
 }
 

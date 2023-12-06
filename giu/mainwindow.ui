@@ -20,7 +20,7 @@
       <item>
        <widget class="QLineEdit" name="line_sourcePath">
         <property name="text">
-         <string>/home/rainovsky/Projects/Svg2Gcode/tests/image/Bicycle.svg</string>
+         <string>/home/rainovsky/Projects/Svg2Gcode/tests/image/test.svg</string>
         </property>
        </widget>
       </item>
@@ -38,7 +38,7 @@
       <item>
        <widget class="QLineEdit" name="line_targetPath">
         <property name="text">
-         <string>/home/rainovsky/Projects/Svg2Gcode/tests/image/Bicycle.nc</string>
+         <string>/home/rainovsky/Projects/Svg2Gcode/tests/image/test.nc</string>
         </property>
        </widget>
       </item>

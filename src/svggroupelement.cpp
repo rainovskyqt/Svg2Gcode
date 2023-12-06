@@ -3,7 +3,7 @@
 SvgGroupElement::SvgGroupElement(QObject *parent)
     : SvgElement(parent)
 {
-
+    m_type = SvgElementType::Group;
 }
 
 void SvgGroupElement::parsing(QXmlStreamReader *reader, SvgTranformStack stack)
@@ -12,13 +12,19 @@ void SvgGroupElement::parsing(QXmlStreamReader *reader, SvgTranformStack stack)
     m_id = SvgElement::getString(&attribs, "id");
     m_label = SvgElement::getString(&attribs, "label");
     m_groupType = getGroupType(m_id);
-    m_type = SvgElement::SvgElementType::Group;
     m_transformStack = parseTranform(getString(&attribs, "transform"), stack);
 }
 
-QStringList SvgGroupElement::gcode()
+QString SvgGroupElement::gcode()
 {
-    return QStringList();
+    QString gcode;
+
+    foreach (SvgElement* element, m_elements) {
+        gcode.append(element->gcode());
+        element->deleteLater();
+    }
+
+    return gcode;
 }
 
 SvgGroupElement::GroupType SvgGroupElement::getGroupType(const QString &id)  //NOTE Сдесь можно добавлять группы, для обработки

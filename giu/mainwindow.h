@@ -3,7 +3,7 @@
 
 #include <QMainWindow>
 
-#include "svg2gcode/svgparser.h"
+#include "src/svgparser.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }

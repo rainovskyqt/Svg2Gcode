@@ -33,13 +33,14 @@ public:
     *
     * Определяет стартовый признак элемента и передает в #parsingElement для разбора свойст элемента
     */
-    QVector<SvgElement *> parsing(QXmlStreamReader *reader);
+    SvgElement *parsing(QXmlStreamReader *reader);
 
 private:
     /*!
     * \brief Список обрануженных и разобранных элементов верхнего уровня
     */
-    QVector<SvgElement*> m_elements; ///<
+    // QVector<SvgElement*> m_elements;
+    SvgElement* m_rootElement;
 
     /*!
     * \brief Функция разбора элемента
@@ -48,7 +49,7 @@ private:
     *
     * Добавляет элемент в список, при обнаружение признака начала элемента рекурсивно себя вызывает, определяет конец элемента.
     */
-    SvgElement* parsingElement(QXmlStreamReader* reader, SvgTranformStack stack);
+    void parsingElement(QXmlStreamReader* reader, SvgTranformStack stack, SvgElement *rootElement);
 };
 
 #endif // SVGPARSER_H

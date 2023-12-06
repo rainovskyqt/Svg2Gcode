@@ -13,7 +13,7 @@ class GcodeGenerator : public QObject
 public:
     explicit GcodeGenerator(QObject *parent = nullptr);
 
-    QStringList genarate(QVector<SvgElement*> svgElementsList);
+    QString genarate(SvgElement *rootElement);
 
 private:
 

@@ -8,60 +8,57 @@
 SvgParser::SvgParser(QObject *parent)
     : QObject(parent)
 {
-
+    
 }
 
 SvgParser::~SvgParser()
 {
-
+    
 }
 
-QVector<SvgElement *> SvgParser::parsing(QXmlStreamReader *reader)
+SvgElement* SvgParser::parsing(QXmlStreamReader *reader)
 {
     SvgTranformStack transformStack;
     Logger::instance()->write(QString("Старт обработки элементов"));
+    
     while (!reader->atEnd()) {
 
+        qDebug() << reader->name().toString();
         QXmlStreamReader::TokenType type = reader->readNext();
-        if(reader->error()){
-            Logger::instance()->write(QString("Ошибка чтения элементов: %1").arg(reader->errorString()));
-            return QVector<SvgElement*>();
-        }
+        if(reader->name().toString() == "svg" && type == QXmlStreamReader::StartElement){
 
-        if(type == QXmlStreamReader::StartElement)
-        {
-            m_elements.append(parsingElement(reader, transformStack));
-        }
-
+        m_rootElement = SvgElement::element("svg");
+        m_rootElement->parsing(reader, transformStack);
+        parsingElement(reader, transformStack, m_rootElement);
     }
-    return m_elements;
+    }
+    return m_rootElement;
 }
 
-SvgElement* SvgParser::parsingElement(QXmlStreamReader *reader, SvgTranformStack stack)
+void SvgParser::parsingElement(QXmlStreamReader *reader, SvgTranformStack stack, SvgElement *rootElement)
 {
-    while (!reader->atEnd())
-    {
+    while (!reader->atEnd()) {
         if(reader->error()){
             Logger::instance()->write(QString("Ошибка парсинга файла").arg(reader->error()));
-            return nullptr;
         }
-
-        SvgElement *element = SvgElement::element(reader->name().toString());
-        if(element != nullptr){
-            element->parsing(reader, stack);
-            // m_elements.push_back(element);
-        }
-
 
         QXmlStreamReader::TokenType type = reader->readNext();
-        if(type == QXmlStreamReader::StartElement)
-        {
-            element->addСhild(parsingElement(reader, stack));
+
+        qDebug() << reader->name().toString();
+        if(reader->name().toString() == ""){
+            continue;
         }
-        else if(type == QXmlStreamReader::EndElement)
-        {
+
+        if(type == QXmlStreamReader::StartElement) {
+
+            SvgElement *currentElement = SvgElement::element(reader->name().toString());
+            currentElement->parsing(reader, stack);
+            parsingElement(reader, stack, currentElement);
+            rootElement->addСhild(currentElement);
+
+        } else if(type == QXmlStreamReader::EndElement){
             Logger::instance()->write(QString("обработка элемента %1 завершена").arg(reader->name().toString()));
-            return element;
+            return;
         }
     }
 }

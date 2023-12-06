@@ -30,10 +30,10 @@ public:
     virtual void parsing(QXmlStreamReader* reader, SvgTranformStack stack) = 0;
 
     /*!
-    * \brief Строки gcode
-    * \return Строки gcode сформированне по свойствам элемента
+    * \brief Строка gcode
+    * \return Строка gcode сформированная по свойствам элемента
     */
-    virtual QStringList gcode() = 0;
+    virtual QString gcode() = 0;
 
     /*!
     * \brief Типы элементов
@@ -41,9 +41,13 @@ public:
     * Содержит список элементов svg файла, которые умеет обрабатывать
     */
     enum SvgElementType{
+        Empty,                      ///< Пустой элемент, возвращается для элементов не требующих обработки
         Group,                      ///< Общее определение группы, элемент не попадающее в другие категории
         FileData,                   ///< Данные о файле
-        Path                        ///< Элемент path #SvgPath
+        Path,                       ///< Элемент path #SvgPath
+        Ellipse,                    ///< Элемент path #SvgEllipse
+        Line,                       ///< Элемент path #SvgLine
+        Circle                      ///< Элемент path #SvgCircle
     };
 
     /*!
@@ -66,6 +70,8 @@ public:
     * \brief Добавляет элемент в список вложенных
     */
     void addСhild(SvgElement * element);
+
+    QVector<SvgElement *> elements();
 
 protected:
     QString m_id;

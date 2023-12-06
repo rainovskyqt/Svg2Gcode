@@ -50,12 +50,10 @@ public:
     void parsing(QXmlStreamReader* reader, SvgTranformStack) override;
 
     /*!
-    * \brief Сформированный gcode
-    * \return Набор Gcode строк сформированных по значениям свойств объекта
-    *
-    * В настоящий момент не используется
+    * \brief Строка gcode
+    * \return Строка gcode сформированная по свойствам элемента
     */
-    QStringList gcode() override;
+    QString gcode() override;
 
 private:
     QString m_docname; ///< Имя файла
