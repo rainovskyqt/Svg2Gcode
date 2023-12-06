@@ -20,6 +20,27 @@ public:
     * \return Строка gcode сформированная по свойствам элемента
     */
     QString gcode() override;
+
+    /*!
+    * \brief Начальная точка
+    * \return Начальная точка линии
+    *
+    * Соответствует параметру x1 и y1
+    */
+    QPointF start() const;
+
+
+    /*!
+    * \brief Конечная точка
+    * \return Конечная точка линии
+    *
+    * Соответствует параметру x2 и y2
+    */
+    QPointF end() const;
+
+private:
+    QPointF m_start;
+    QPointF m_end;
 };
 
 #endif // SVGLINE_H
