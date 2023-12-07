@@ -1,12 +1,12 @@
-#ifndef SVGELLIPSE_H
-#define SVGELLIPSE_H
+#ifndef SVGRECT_H
+#define SVGRECT_H
 
 #include "svgelement.h"
 
-class SvgEllipse : public SvgElement
+class SvgRect : public SvgElement
 {
 public:
-    explicit SvgEllipse(QObject *parent = nullptr);
+    explicit SvgRect(QObject *parent = nullptr);
 
     /*!
     * \brief Разбор данных элемента
@@ -22,9 +22,11 @@ public:
     QString gcode() override;
 
 private:
-    QPointF m_center;
-    double m_radiusX     = 0;
-    double m_radiusY     = 0;
+    QPointF m_start;
+    double m_width;
+    double m_height;
+    double m_radiusX;
+    double m_radiusY;
 };
 
-#endif // SVGELLIPSE_H
+#endif // SVGRECT_H

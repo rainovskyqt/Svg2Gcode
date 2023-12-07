@@ -22,13 +22,3 @@ QString SvgLine::gcode()
 
     return QString("Line: s_x: %1, s_y: %2, e_x: %3, e_y: %4\n").arg(m_start.x()).arg(m_start.y()).arg(m_end.x()).arg(m_end.y()) ;
 }
-
-QPointF SvgLine::start() const
-{
-    return m_start;
-}
-
-QPointF SvgLine::end() const
-{
-    return m_end;
-}

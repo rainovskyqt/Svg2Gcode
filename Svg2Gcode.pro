@@ -24,6 +24,7 @@ SOURCES += \
     src/svgline.cpp \
     src/svgparser.cpp \
     src/svgpath.cpp \
+    src/svgrect.cpp \
     src/svgstyle.cpp \
     src/svgtranformparser.cpp \
     src/svgtranformstack.cpp \
@@ -44,6 +45,7 @@ HEADERS += \
     src/svgline.h \
     src/svgparser.h \
     src/svgpath.h \
+    src/svgrect.h \
     src/svgstyle.h \
     src/svgtranformparser.h \
     src/svgtranformstack.h \

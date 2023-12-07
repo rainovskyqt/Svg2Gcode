@@ -19,11 +19,13 @@ QString SvgGroupElement::gcode()
 {
     QString gcode;
 
+    gcode.append(QString("Start layer %1\n").arg(m_label));
+
     foreach (SvgElement* element, m_elements) {
         gcode.append(element->gcode());
         element->deleteLater();
     }
-
+    gcode.append(QString("End layer %1\n").arg(m_id));
     return gcode;
 }
 

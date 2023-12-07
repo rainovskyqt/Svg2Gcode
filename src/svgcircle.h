@@ -21,6 +21,10 @@ public:
     * \return Строка gcode сформированная по свойствам элемента
     */
     QString gcode() override;
+
+private:
+    QPointF m_center;
+    double m_radius;
 };
 
 #endif // SVGCIRCLE_H
