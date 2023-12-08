@@ -1,12 +1,12 @@
-#ifndef SVGCIRCLE_H
-#define SVGCIRCLE_H
+#ifndef SVGPOLYGON_H
+#define SVGPOLYGON_H
 
 #include "svgelement.h"
 
-class SvgCircle : public SvgElement
+class SvgPolygon : public SvgElement
 {
 public:
-    explicit SvgCircle(QObject *parent = nullptr);
+    explicit SvgPolygon(QObject *parent = nullptr);
 
     /*!
     * \brief Разбор данных элемента
@@ -20,10 +20,6 @@ public:
     * \return Строка gcode сформированная по свойствам элемента
     */
     QString gcode() override;
-
-private:
-    QPointF m_center;
-    double m_radius;
 };
 
-#endif // SVGCIRCLE_H
+#endif // SVGPOLYGON_H

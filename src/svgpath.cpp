@@ -1,4 +1,5 @@
 #include "svgpath.h"
+#include "gcodecomments.h"
 
 SvgPath::SvgPath(QObject *parent)
     : SvgElement{parent}
@@ -17,11 +18,13 @@ QString SvgPath::gcode()
 {
     QString gcode;
 
+    gcode.append(GCodeComments().toString(QString("Start path %1").arg(m_id)));
+
     foreach (SvgElement* element, m_elements) {
         gcode.append(element->gcode());
         element->deleteLater();
     }
-    gcode.append("Path\n");
+    gcode.append(GCodeComments().toString(QString("End path %1").arg(m_id)));
 
     return gcode;
 }

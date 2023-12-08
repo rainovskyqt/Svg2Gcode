@@ -48,7 +48,8 @@ public:
         Ellipse,                    ///< Элемент path #SvgEllipse
         Line,                       ///< Элемент path #SvgLine
         Circle,                     ///< Элемент path #SvgCircle
-        Rect                        ///< Элемент path #SvgRect
+        Rect,                       ///< Элемент path #SvgRect
+        Polygon                     ///< Элемент path #SvgPolygon
     };
 
     /*!
