@@ -35,6 +35,7 @@ public:
     void pushSkew(double sx, double sy);
 
     QPointF process(double x, double y);
+    QPointF process(QPointF point);
 
 private:
     QVector<Transformation> m_stack;

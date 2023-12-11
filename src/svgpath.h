@@ -10,13 +10,12 @@ class SvgPath : public SvgElement
 public:
     explicit SvgPath(QObject *parent = nullptr);
 
-    void parsing(QXmlStreamReader* reader, const SvgTranformStack stack) override;
-
+    void parsing(QXmlStreamReader* reader, SvgTranformStack stack, SvgStyle style) override;
     /*!
     * \brief Строка gcode
     * \return Строка gcode сформированная по свойствам элемента
     */
-    QString gcode() override;
+    QString gcode(GCodeTool *gCodeTool) override;
 
 private:
     QPointF m_start;

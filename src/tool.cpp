@@ -1,9 +1,7 @@
 #include "tool.h"
 
-Tool::Tool(ToolType newToolType, int newFeedRate)
+Tool::Tool()
 {
-    m_toolType = newToolType;
-    m_feedRate = newFeedRate;
 
 }
 
@@ -17,54 +15,42 @@ void Tool::setFeedRate(int newFeedRate)
     m_feedRate = newFeedRate;
 }
 
-int Tool::toolType() const
+int Tool::extruderTemp() const
 {
-    return m_toolType;
+    return m_extruderTemp;
 }
 
-void Tool::setToolType(ToolType newToolType)
+void Tool::setExtruderTemp(int newExtruderTemp)
 {
-    m_toolType = newToolType;
+    m_extruderTemp = newExtruderTemp;
 }
 
-QString Tool::move(int x, int y, int z)
+int Tool::platformTemp() const
 {
-    return QString("GO X%1 Y%2 Z%3")
-            .arg(x)
-            .arg(y)
-            .arg(z);
+    return m_platformTemp;
 }
 
-QString Tool::moveAndExtrude(double x, double y, double z, double extrudeVolume)
+void Tool::setPlatformTemp(int newPlatformTemp)
 {
-    return QString("G1 X%1 Y%2 Z%3 E%4")
-            .arg(x)
-            .arg(y)
-            .arg(z)
-            .arg(extrudeVolume)
-            .toLatin1();
+    m_platformTemp = newPlatformTemp;
 }
 
-QString Tool::pauseSec(int seconds)
+double Tool::nozzleDiameter() const
 {
-    return QString("G4 S%1")
-            .arg(seconds)
-            .toLatin1();
+    return m_nozzleDiameter;
 }
 
-QString Tool::pauseMillsec(int millsec)
+void Tool::setNozzleDiameter(double newNozzleDiameter)
 {
-    return QString("G4 P%1")
-            .arg(millsec)
-            .toLatin1();
+    m_nozzleDiameter = newNozzleDiameter;
 }
 
-QString Tool::headUp(int mm)
+double Tool::layerHeight() const
 {
-    return move(0, 0, mm);
+    return m_layerHeight;
 }
 
-QString Tool::headDown(int mm)
+void Tool::setLayerHeight(double newLayerHeight)
 {
-    return move(0, 0, -mm);
+    m_layerHeight = newLayerHeight;
 }

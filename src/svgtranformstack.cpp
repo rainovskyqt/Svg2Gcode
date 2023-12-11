@@ -12,6 +12,19 @@ void SvgTranformStack::push(Transformation trans)
     m_stack.append(trans);
 }
 
+void SvgTranformStack::push(double a, double b, double c, double d, double e, double f)
+{
+    Transformation t;
+    t.a = a;
+    t.b = b;
+    t.c = c;
+    t.d = d;
+    t.e = e;
+    t.f = f;
+
+    push(t);
+}
+
 void SvgTranformStack::pop()
 {
     m_stack.pop_back();
@@ -105,4 +118,9 @@ QPointF SvgTranformStack::process(double x, double y)
     }
 
     return result;
+}
+
+QPointF SvgTranformStack::process(QPointF point)
+{
+    return process(point.x(), point.y());
 }

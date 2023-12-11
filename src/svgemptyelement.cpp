@@ -6,7 +6,7 @@ SvgEmptyElement::SvgEmptyElement(QObject *parent)
         m_type = SvgElementType::Empty;
 }
 
-void SvgEmptyElement::parsing(QXmlStreamReader *reader, SvgTranformStack stack)
+void SvgEmptyElement::parsing(QXmlStreamReader *reader, SvgTranformStack stack, SvgStyle style)
 {
     Q_UNUSED(stack)
 
@@ -14,7 +14,7 @@ void SvgEmptyElement::parsing(QXmlStreamReader *reader, SvgTranformStack stack)
     m_id = SvgElement::getString(&attribs, "id");
 }
 
-QString SvgEmptyElement::gcode()
+QString SvgEmptyElement::gcode(GCodeTool *gCodeTool)
 {
     return "";
 }

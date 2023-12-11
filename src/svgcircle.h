@@ -13,13 +13,12 @@ public:
     *
     * Разбор данных элемента, основная функция котрая рзбирает переданные параметры по свойствам класса объекта
     */
-    void parsing(QXmlStreamReader* reader, SvgTranformStack stack) override;
-
+    void parsing(QXmlStreamReader* reader, SvgTranformStack stack, SvgStyle style) override;
     /*!
     * \brief Строка gcode
     * \return Строка gcode сформированная по свойствам элемента
     */
-    QString gcode() override;
+    QString gcode(GCodeTool *gCodeTool) override;
 
 private:
     QPointF m_center;

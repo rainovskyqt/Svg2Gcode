@@ -28,7 +28,7 @@ SvgElement* SvgParser::parsing(QXmlStreamReader *reader)
         if(reader->name().toString() == "svg" && type == QXmlStreamReader::StartElement){
 
         m_rootElement = SvgElement::element("svg");
-        m_rootElement->parsing(reader, transformStack);
+            m_rootElement->parsing(reader, transformStack, SvgStyle());
         parsingElement(reader, transformStack, m_rootElement);
     }
     }
@@ -52,8 +52,8 @@ void SvgParser::parsingElement(QXmlStreamReader *reader, SvgTranformStack stack,
         if(type == QXmlStreamReader::StartElement) {
 
             SvgElement *currentElement = SvgElement::element(reader->name().toString());
-            currentElement->parsing(reader, stack);
-            parsingElement(reader, stack, currentElement);
+            currentElement->parsing(reader, stack, rootElement->style());
+            parsingElement(reader, currentElement->transformStack(), currentElement);
             rootElement->addСhild(currentElement);
 
         } else if(type == QXmlStreamReader::EndElement){

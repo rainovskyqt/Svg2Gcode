@@ -7,21 +7,21 @@ SvgPath::SvgPath(QObject *parent)
     m_type = SvgElementType::Path;
 }
 
-void SvgPath::parsing(QXmlStreamReader *reader, const SvgTranformStack stack)
+void SvgPath::parsing(QXmlStreamReader *reader, SvgTranformStack stack, SvgStyle style)
 {
     QXmlStreamAttributes attribs = reader->attributes();
-    m_id = SvgElement::getString(&attribs, "id");
-    m_transformStack = parseTranform(getString(&attribs, "transform"), stack);
+
+    SvgElement::parsing(reader, stack, style);
 }
 
-QString SvgPath::gcode()
+QString SvgPath::gcode(GCodeTool *gCodeTool)
 {
     QString gcode;
 
     gcode.append(GCodeComments().toString(QString("Start path %1").arg(m_id)));
 
     foreach (SvgElement* element, m_elements) {
-        gcode.append(element->gcode());
+        gcode.append(element->gcode(gCodeTool));
         element->deleteLater();
     }
     gcode.append(GCodeComments().toString(QString("End path %1").arg(m_id)));

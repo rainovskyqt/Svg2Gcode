@@ -14,6 +14,7 @@ SOURCES += \
     src/fccodemaker.cpp \
     src/gcodecomments.cpp \
     src/gcodegenerator.cpp \
+    src/gcodetool.cpp \
     src/logger.cpp \
     src/svgcircle.cpp \
     src/svgelement.cpp \
@@ -36,6 +37,7 @@ HEADERS += \
     src/fccodemaker.h \
     src/gcodecomments.h \
     src/gcodegenerator.h \
+    src/gcodetool.h \
     src/logger.h \
     src/svgcircle.h \
     src/svgelement.h \

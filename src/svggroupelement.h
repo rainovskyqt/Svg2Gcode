@@ -16,13 +16,13 @@ public:
 
     SvgGroupElement(QObject *parent = nullptr);   ///Элемен отвечающий, что началась группа элементов
 
-    void parsing(QXmlStreamReader *reader, SvgTranformStack stack) override;
+    void parsing(QXmlStreamReader* reader, SvgTranformStack stack, SvgStyle style);
 
     /*!
     * \brief Строка gcode
     * \return Строка gcode сформированная по свойствам элемента
     */
-    QString gcode() override;
+    QString gcode(GCodeTool *gCodeTool) override;
 
 private:
     GroupType m_groupType;

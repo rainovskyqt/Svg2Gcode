@@ -7,12 +7,13 @@
     * Абстрактный элемент svg файла, содержит общие свойства и методы присущие всем элементам
     */
 
+#include "svgstyle.h"
 #include "svgtranformstack.h"
 
 #include <QString>
 #include <QObject>
 #include <QXmlStreamReader>
-
+#include "gcodetool.h"
 
 
 class SvgElement : public QObject
@@ -27,13 +28,13 @@ public:
     *
     * Разбор данных элемента, основная функция котрая рзбирает переданные параметры по свойствам класса объекта
     */
-    virtual void parsing(QXmlStreamReader* reader, SvgTranformStack stack) = 0;
+    virtual void parsing(QXmlStreamReader* reader, SvgTranformStack stack, SvgStyle style);
 
     /*!
     * \brief Строка gcode
     * \return Строка gcode сформированная по свойствам элемента
     */
-    virtual QString gcode() = 0;
+    virtual QString gcode(GCodeTool *gCodeTool) = 0;
 
     /*!
     * \brief Типы элементов
@@ -62,10 +63,10 @@ public:
     static SvgElement *element(const QString &name);
 
 
-    QString findValue(QXmlStreamAttributes* attribs, QString attributeName);
-    double getDouble(QXmlStreamAttributes* attribs, QString attributeName);
-    int getInt(QXmlStreamAttributes* attribs, QString attributeName);
-    QString getString(QXmlStreamAttributes* attribs, QString attributeName);
+    static QString findValue(QXmlStreamAttributes* attribs, QString attributeName);
+    static double getDouble(QXmlStreamAttributes* attribs, QString attributeName);
+    static int getInt(QXmlStreamAttributes* attribs, QString attributeName);
+    static QString getString(QXmlStreamAttributes* attribs, QString attributeName);
     SvgElementType type() const;
 
     /*!
@@ -74,6 +75,10 @@ public:
     void addСhild(SvgElement * element);
 
     QVector<SvgElement *> elements();
+
+    SvgTranformStack transformStack() const;
+
+    SvgStyle style() const;
 
 protected:
     QString m_id;
@@ -85,8 +90,12 @@ protected:
     QVector<SvgElement*> m_elements;
 
     SvgTranformStack m_transformStack;
+    SvgStyle m_style;
 
     SvgTranformStack parseTranform(const QString &transform, SvgTranformStack stack);
+    SvgStyle parseStyle(QXmlStreamReader *reader, SvgStyle parentStyle);
+
+    bool isHidden();
 };
 
 #endif // SVGELEMENT_H

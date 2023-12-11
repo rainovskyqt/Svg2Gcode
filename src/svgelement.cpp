@@ -15,6 +15,14 @@ SvgElement::SvgElement(QObject *parent)
 
 }
 
+void SvgElement::parsing(QXmlStreamReader *reader, SvgTranformStack stack, SvgStyle style)
+{
+    QXmlStreamAttributes attribs = reader->attributes();
+    m_id = SvgElement::getString(&attribs, "id");
+    m_transformStack = parseTranform(getString(&attribs, "transform"), stack);
+    m_style = parseStyle(reader, style);
+}
+
 SvgElement *SvgElement::element(const QString &name)
 {
     if(name == "")
@@ -104,6 +112,16 @@ QVector<SvgElement *> SvgElement::elements()
     return m_elements;
 }
 
+SvgTranformStack SvgElement::transformStack() const
+{
+    return m_transformStack;
+}
+
+SvgStyle SvgElement::style() const
+{
+    return m_style;
+}
+
 SvgTranformStack SvgElement::parseTranform(const QString &transform, SvgTranformStack stack)
 {
     SvgTranformParser parser;
@@ -111,3 +129,16 @@ SvgTranformStack SvgElement::parseTranform(const QString &transform, SvgTranform
 
     return m_transformStack;
 }
+
+SvgStyle SvgElement::parseStyle(QXmlStreamReader *reader, SvgStyle parentStyle)
+{
+    m_style.copy(parentStyle);
+    m_style.parsing(reader);
+    return m_style;
+}
+
+bool SvgElement::isHidden()
+{
+    return m_style.visibility() == "hidden";
+}
+

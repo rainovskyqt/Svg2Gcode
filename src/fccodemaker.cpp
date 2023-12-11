@@ -1,19 +1,27 @@
 #include "fccodemaker.h"
 #include "gcodegenerator.h"
 #include "svgparser.h"
+#include "gcodetool.h"
 
 FCCodeMaker::FCCodeMaker(QObject *parent)
     : QObject{parent}
-{}
+{
 
+}
 
 QString FCCodeMaker::convert(QXmlStreamReader *reader)
 {
     SvgParser parcer;
     SvgElement *rootElement = parcer.parsing(reader);
 
+    Tool *tool = new Tool();
+
+    GCodeTool *gCodeTool = new GCodeTool(tool);
+
     GcodeGenerator generator;
-    QString gcode = generator.genarate(rootElement);
+    QString gcode = generator.genarate(rootElement, gCodeTool);
+
+    delete tool;
 
     return gcode;
 }
@@ -35,4 +43,14 @@ QString FCCodeMaker::convert(const QString &filePath, QString &errorString)
 
     QByteArray svgData = svgFile.readAll();
     return convert(svgData);
+}
+
+Tool *FCCodeMaker::makeTool(Tool *tool)
+{
+    tool->setFeedRate(140);
+    tool->setPlatformTemp(60);
+    tool->setExtruderTemp(200);
+    tool->setNozzleDiameter(0.5);
+
+    return tool;
 }
