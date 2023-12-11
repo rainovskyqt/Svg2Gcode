@@ -25,7 +25,7 @@ public:
 
     /*!
      * \brief Устнановка рабочей скорости  подачи
-     * \param Новая рабочая скорость подачи
+     * \param newFeedRate Новая рабочая скорость подачи
      */
     void setFeedRate(int newFeedRate);
 
@@ -37,7 +37,7 @@ public:
 
     /*!
      * \brief Устнановка рабочей температуры экструдера
-     * \param Новая рабочая температура экструдера
+     * \param newExtruderTemp Новая рабочая температура экструдера
      */
     void setExtruderTemp(int newExtruderTemp);
 
@@ -49,7 +49,7 @@ public:
 
     /*!
      * \brief Устнановка рабочей температуры платформы
-     * \param Новая рабочая температура платформы
+     * \param newPlatformTemp Новая рабочая температура платформы
      */
     void setPlatformTemp(int newPlatformTemp);
 
@@ -61,7 +61,7 @@ public:
 
     /*!
      * \brief Устнановка диаметра сопла
-     * \param Новый диаметра сопла
+     * \param newNozzleDiameter Новый диаметра сопла
      */
     void setNozzleDiameter(double newNozzleDiameter);
 
@@ -73,10 +73,21 @@ public:
 
     /*!
      * \brief Устнановка толщины слоя
-     * \param Новая толщина слоя
+     * \param newLayerHeight Новая толщина слоя
      */
     void setLayerHeight(double newLayerHeight);
 
+    /*!
+     * \brief Объем выдавливаемого пластика
+     * \return Объем выдавливаемого пластика
+     */
+    double extrudeVolume() const;
+
+    /*!
+     * \brief Устнановка объема выдавливаемого пластика
+     * \param newExtrudeVolume Новый объем выдавливаемого пластика
+     */
+    void setExtrudeVolume(double newExtrudeVolume);
 
 protected:
     int m_feedRate;
@@ -84,6 +95,7 @@ protected:
     int m_platformTemp;
     double m_nozzleDiameter;
     double m_layerHeight;
+    double m_extrudeVolume;
 };
 
 #endif // TOOL_H

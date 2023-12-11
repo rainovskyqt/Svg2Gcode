@@ -24,10 +24,14 @@ QString GCodeTool::move(QPointF point)
 
 QString GCodeTool::feed(QPointF point, double extrudeVolume)
 {
+    double extrVol = m_tool->extrudeVolume();
+    if(extrudeVolume != -1)
+        extrVol = extrudeVolume;
+
     return QString("G1 X%1 Y%2 E%5\n")
         .arg(point.x())
         .arg(point.y())
-        .arg(extrudeVolume);
+        .arg(extrVol);
 }
 
 QString GCodeTool::pauseSec(int seconds)
@@ -84,4 +88,9 @@ QString GCodeTool::haltSettings()
     gcode.append("G28\n");          //Вернуться в начальное положение
 
     return gcode;
+}
+
+Tool *GCodeTool::physicalTool()
+{
+    return m_tool;
 }

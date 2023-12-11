@@ -25,7 +25,24 @@ private:
     QPointF m_start;    ///<Стартовые координаты
     QPointF m_end;      ///<Конечные координаты
 
+    /*!
+    * \brief Количество проходов
+    * \return Количество проходов по линии
+    *
+    * Количество проходов по линии определяется толщиной линии в svg файле и диаметром сопла
+    */
+    int getPassedCount(double nozzleDiameter);
 
+
+    /*!
+    * \brief Конечные точки проходов печати
+    * \return Конечные точки проходов печати
+    *
+    * Конечные точки проходов печати определяются смещением от центральной точки указанной в svg файле, и количеством проходов
+    * смещение по оси х определяется как offset_x=distance⋅cos(angle), где distance⋅- диаметр сопла
+    * смещение по оси y определяется как offset_x=distance⋅sin(angle)
+    */
+    QVector<QPointF> getPassedPoints(QPointF start, QPointF end, double nozzleDiameter);
 };
 
 #endif // SVGLINE_H

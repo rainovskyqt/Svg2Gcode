@@ -33,6 +33,8 @@ public:
      */
     QString haltSettings();
 
+    Tool *physicalTool();
+
 private:
     Tool *m_tool;
     QVector3D m_currentPosition;

@@ -15,6 +15,7 @@ QString FCCodeMaker::convert(QXmlStreamReader *reader)
     SvgElement *rootElement = parcer.parsing(reader);
 
     Tool *tool = new Tool();
+    makeTool(tool);
 
     GCodeTool *gCodeTool = new GCodeTool(tool);
 
@@ -42,6 +43,7 @@ QString FCCodeMaker::convert(const QString &filePath, QString &errorString)
     }
 
     QByteArray svgData = svgFile.readAll();
+
     return convert(svgData);
 }
 
@@ -51,6 +53,7 @@ Tool *FCCodeMaker::makeTool(Tool *tool)
     tool->setPlatformTemp(60);
     tool->setExtruderTemp(200);
     tool->setNozzleDiameter(0.5);
+    tool->setExtrudeVolume(30.0);
 
     return tool;
 }

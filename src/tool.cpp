@@ -54,3 +54,13 @@ void Tool::setLayerHeight(double newLayerHeight)
 {
     m_layerHeight = newLayerHeight;
 }
+
+double Tool::extrudeVolume() const
+{
+    return m_extrudeVolume;
+}
+
+void Tool::setExtrudeVolume(double newExtrudeVolume)
+{
+    m_extrudeVolume = newExtrudeVolume;
+}

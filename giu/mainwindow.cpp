@@ -45,11 +45,13 @@ void MainWindow::on_btn_targetPath_clicked()
     ui->line_targetPath->setText(path);
 }
 #include <QDebug>
+#include <QtMath>
 void MainWindow::on_btn_exit_clicked()
 {
     QRegExp del("[mclz]");
     // qDebug() << QString("m 439.28,734.64 c -0.90974,-0.22743 -25.359,8.0739 -25.359,8.0739 l 0.22744,1.8195 26.269,-8.5288 z",
     //                     QString::SplitBehavior).split(del);
+
     qApp->exit(0);
 }
 

@@ -2,7 +2,6 @@
 
 #include <QDebug>
 
-#include "logger.h"
 #include "gcodecomments.h"
 
 GcodeGenerator::GcodeGenerator(QObject *parent)
