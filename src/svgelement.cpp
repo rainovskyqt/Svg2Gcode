@@ -48,6 +48,9 @@ SvgElement *SvgElement::element(const QString &name)
     } else if (QString::compare(name, "circle", Qt::CaseInsensitive) == 0){
         Logger::instance()->write(QString("Создали svg элемент circle"));
         return new SvgCircle();
+    } else if (QString::compare(name, "d", Qt::CaseInsensitive) == 0){
+        Logger::instance()->write(QString("Создали svg элемент path"));
+        return new SvgPath();
     }
 
     return new SvgEmptyElement();

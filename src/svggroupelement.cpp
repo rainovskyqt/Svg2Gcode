@@ -12,6 +12,7 @@ void SvgGroupElement::parsing(QXmlStreamReader *reader, SvgTranformStack stack, 
     QXmlStreamAttributes attribs = reader->attributes();
     m_label = SvgElement::getString(&attribs, "label");
     m_groupType = getGroupType(m_id);
+    m_class = SvgElement::getString(&attribs, "class");
 
     SvgElement::parsing(reader, stack, style);
 }
@@ -23,7 +24,7 @@ QString SvgGroupElement::gcode(GCodeTool *gCodeTool)
 
     QString gcode;
 
-    gcode.append(GCodeComments().toString(QString("Start layer %1").arg(m_label)));
+    gcode.append(GCodeComments().toString(QString("Start layer %1").arg(m_label.isEmpty() ? m_class : m_label)));
 
     foreach (SvgElement* element, m_elements) {
         gcode.append(element->gcode(gCodeTool));

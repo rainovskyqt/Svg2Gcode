@@ -22,15 +22,20 @@ QString GCodeTool::move(QPointF point)
         .arg(point.y());
 }
 
-QString GCodeTool::feed(QPointF point, double extrudeVolume)
+QString GCodeTool::feed(QPointF point, double extrudeVolume, double feedRate)
 {
     double extrVol = m_tool->extrudeVolume();
-    if(extrudeVolume != -1)
+    double feed = m_tool->feedRate();
+    if(extrudeVolume)
         extrVol = extrudeVolume;
 
-    return QString("G1 X%1 Y%2 E%5\n")
+    if(feedRate)
+        feed = feedRate;
+
+    return QString("G1 X%1 Y%2 F%3 E%4\n")
         .arg(point.x())
         .arg(point.y())
+        .arg(feed)
         .arg(extrVol);
 }
 

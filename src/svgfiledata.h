@@ -58,6 +58,7 @@ public:
 private:
     QString m_docname; ///< Имя файла
     QString m_inkscape_version; ///< Версия Inkscape
+    QString m_xmlns; ///< Пространство имен xml
 };
 
 #endif // SVGFILEDATA_H

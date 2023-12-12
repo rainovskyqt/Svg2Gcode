@@ -27,6 +27,7 @@ public:
 private:
     GroupType m_groupType;
     QString m_label;
+    QString m_class;
 
     GroupType getGroupType(const QString &id);
 };

@@ -14,7 +14,7 @@ public:
     explicit GCodeTool(Tool *tool, QObject *parent = nullptr);
 
     QString move(QPointF point);
-    QString feed(QPointF point, double extrudeVolume = -1);
+    QString feed(QPointF point, double extrudeVolume = 0, double feedRate = 0);
     QString pauseSec(int seconds);
     QString pauseMillsec(int millsec);
     QString headMove(int z);

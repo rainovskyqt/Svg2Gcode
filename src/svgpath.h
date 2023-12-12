@@ -5,6 +5,7 @@
 
 #include <QPointF>
 
+
 class SvgPath : public SvgElement
 {
 public:
@@ -19,7 +20,7 @@ public:
 
 private:
     QPointF m_start;
-
+    void parseCommands(const QString &commads);
 };
 
 #endif // SVGPATH_H
