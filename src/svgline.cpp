@@ -3,10 +3,18 @@
 #include <QLineF>
 #include <QtMath>
 
-SvgLine::SvgLine(QObject *parent)
+SvgLine::SvgLine(bool relatively, QObject *parent)
     : SvgElement{parent}
 {
     m_type = SvgElementType::Line;
+    m_relatively = relatively;
+}
+
+SvgLine::SvgLine(QPointF start, QPointF end, bool relatively, QObject *parent)
+{
+    m_start = start;
+    m_end = end;
+    SvgLine(relatively, parent);
 }
 
 void SvgLine::parsing(QXmlStreamReader *reader, SvgTranformStack stack, SvgStyle style)
@@ -30,7 +38,8 @@ QString SvgLine::gcode(GCodeTool *gCodeTool)
     QString gcode;
 
     QPointF trnStart = m_transformStack.process(m_start);       // Стартовая точка линии после применения трансформаций
-    QPointF trnEnd = m_transformStack.process(m_end);       // Стартовая точка линии после применения трансформаций
+    QPointF end = getEndPoint(trnStart, m_end, m_relatively);     // Конечная точка линии после преобразования, если координаты относительные
+    QPointF trnEnd = m_transformStack.process(end);       // Конечная точка линии после применения трансформаций
     QVector<QPointF> points = getPassedPoints(trnStart, trnEnd, gCodeTool->physicalTool()->nozzleDiameter());
 
     int currentPoint = -1;          //Ставим -1, что бы проще цикл быи и на первой иттерации получился 0-й элемент
@@ -38,7 +47,6 @@ QString SvgLine::gcode(GCodeTool *gCodeTool)
         gcode.append(gCodeTool->move(points.at(++currentPoint)));
         gcode.append(gCodeTool->feed(points.at(++currentPoint)));
     }
-
 
     return gcode;
 }
@@ -70,14 +78,14 @@ QVector<QPointF> SvgLine::getPassedPoints(QPointF start, QPointF end, double noz
 
     int currentPass = 1;        //Текущий проход, ставим 1, т.к. уже есть один проход добавленный в массив
     while (currentPass < passedCount) {
-        // если четный проход, то добавляем сначала точку окончания линии
         if(currentPass % 2 == 1){
-            points.append(QPointF(firstPassedEnd.x() + (currentPass * xOffset), firstPassedEnd.y() + (offset * yOffset)));
-            points.append(QPointF(firstPassedStart.x() + (currentPass * xOffset), firstPassedStart.y() + (offset * yOffset)));
-            // если нечетный проход, то добавляем сначала точку начала линии
+            // если нечетный проход, то добавляем сначала точку окончания линии
+            points.append(QPointF(firstPassedEnd.x() + (currentPass * xOffset), firstPassedEnd.y() + (currentPass * yOffset)));
+            points.append(QPointF(firstPassedStart.x() + (currentPass * xOffset), firstPassedStart.y() + (currentPass * yOffset)));
         } else {
-            points.append(QPointF(firstPassedStart.x() + (currentPass * xOffset), firstPassedStart.y() + (offset * yOffset)));
-            points.append(QPointF(firstPassedEnd.x() + (currentPass * xOffset), firstPassedEnd.y() + (offset * yOffset)));
+            // если четный проход, то добавляем сначала точку начала линии
+            points.append(QPointF(firstPassedStart.x() + (currentPass * xOffset), firstPassedStart.y() + (currentPass * yOffset)));
+            points.append(QPointF(firstPassedEnd.x() + (currentPass * xOffset), firstPassedEnd.y() + (currentPass * yOffset)));
         }
         // Таки образом головка при отрисовки линии будет ходить в обе стороны
         ++currentPass;
@@ -85,5 +93,14 @@ QVector<QPointF> SvgLine::getPassedPoints(QPointF start, QPointF end, double noz
 
 
     return points;
+}
+
+QPointF SvgLine::getEndPoint(QPointF start, QPointF end, bool relatively)
+{
+    if(relatively){
+        return start + end;
+    } else {
+        return end;
+    }
 }
 

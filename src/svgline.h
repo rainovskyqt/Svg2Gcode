@@ -6,7 +6,8 @@
 class SvgLine : public SvgElement
 {
 public:
-    explicit SvgLine(QObject *parent = nullptr);
+    explicit SvgLine(bool relatively = false, QObject *parent = nullptr);
+    explicit SvgLine(QPointF start, QPointF end, bool relatively = false, QObject *parent = nullptr);
 
     /*!
     * \brief Разбор данных элемента
@@ -24,6 +25,7 @@ public:
 private:
     QPointF m_start;    ///<Стартовые координаты
     QPointF m_end;      ///<Конечные координаты
+    bool m_relatively;      ///< Флаг что конечные координаты линии являются относительными
 
     /*!
     * \brief Количество проходов
@@ -43,6 +45,8 @@ private:
     * смещение по оси y определяется как offset_x=distance⋅sin(angle)
     */
     QVector<QPointF> getPassedPoints(QPointF start, QPointF end, double nozzleDiameter);
+
+    QPointF getEndPoint(QPointF start, QPointF end, bool relatively);
 };
 
 #endif // SVGLINE_H
