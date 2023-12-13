@@ -12,6 +12,7 @@ SOURCES += \
     giu/main.cpp \
     giu/mainwindow.cpp \
     src/fccodemaker.cpp \
+    src/fcctool.cpp \
     src/gcodecomments.cpp \
     src/gcodegenerator.cpp \
     src/gcodetool.cpp \
@@ -29,12 +30,12 @@ SOURCES += \
     src/svgrect.cpp \
     src/svgstyle.cpp \
     src/svgtranformparser.cpp \
-    src/svgtranformstack.cpp \
-    src/tool.cpp
+    src/svgtranformstack.cpp
 
 HEADERS += \
     giu/mainwindow.h \
     src/fccodemaker.h \
+    src/fcctool.h \
     src/gcodecomments.h \
     src/gcodegenerator.h \
     src/gcodetool.h \
@@ -52,8 +53,7 @@ HEADERS += \
     src/svgrect.h \
     src/svgstyle.h \
     src/svgtranformparser.h \
-    src/svgtranformstack.h \
-    src/tool.h
+    src/svgtranformstack.h
 
 FORMS += \
     giu/mainwindow.ui

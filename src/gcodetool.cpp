@@ -1,6 +1,6 @@
 #include "gcodetool.h"
 
-GCodeTool::GCodeTool(Tool *tool, QObject *parent)
+GCodeTool::GCodeTool(FCCTool *tool, QObject *parent)
     : QObject{parent}
 {
     m_tool = tool;
@@ -95,7 +95,7 @@ QString GCodeTool::haltSettings()
     return gcode;
 }
 
-Tool *GCodeTool::physicalTool()
+FCCTool *GCodeTool::physicalTool()
 {
     return m_tool;
 }

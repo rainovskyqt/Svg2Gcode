@@ -1,7 +1,7 @@
 #ifndef GCODETOOL_H
 #define GCODETOOL_H
 
-#include "tool.h"
+#include "fcctool.h"
 
 #include <QObject>
 #include <QPointF>
@@ -11,7 +11,7 @@ class GCodeTool : public QObject
 {
     Q_OBJECT
 public:
-    explicit GCodeTool(Tool *tool, QObject *parent = nullptr);
+    explicit GCodeTool(FCCTool *tool, QObject *parent = nullptr);
 
     QString move(QPointF point);
     QString feed(QPointF point, double extrudeVolume = 0, double feedRate = 0);
@@ -33,10 +33,10 @@ public:
      */
     QString haltSettings();
 
-    Tool *physicalTool();
+    FCCTool *physicalTool();
 
 private:
-    Tool *m_tool;
+    FCCTool *m_tool;
     QVector3D m_currentPosition;
     bool m_headUpped;
     int m_currentLayer;

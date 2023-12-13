@@ -1,5 +1,5 @@
-#ifndef TOOL_H
-#define TOOL_H
+#ifndef FCCTOOL_H
+#define FCCTOOL_H
 
 
 #include <QString>
@@ -10,11 +10,11 @@
  * Класс инсполнительного инструмента (принтрера), содержит в себе настройки имеющие значение для печати
  */
 
-class Tool
+class FCCTool
 {
 public:
 
-    explicit Tool();
+    explicit FCCTool();
 
     /*!
      * \brief Рабочая скорость подачи головки
@@ -98,4 +98,4 @@ protected:
     double m_extrudeVolume;
 };
 
-#endif // TOOL_H
+#endif // FCCTOOL_H

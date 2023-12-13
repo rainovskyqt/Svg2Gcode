@@ -3,7 +3,7 @@
 #include <QDebug>
 #include "svgfiledata.h"
 
-#include "tool.h"
+#include "fcctool.h"
 
 SvgParser::SvgParser(QObject *parent)
     : QObject(parent)

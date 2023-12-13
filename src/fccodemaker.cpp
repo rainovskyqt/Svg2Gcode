@@ -14,7 +14,7 @@ QString FCCodeMaker::convert(QXmlStreamReader *reader)
     SvgParser parcer;
     SvgElement *rootElement = parcer.parsing(reader);
 
-    Tool *tool = new Tool();
+    FCCTool *tool = new FCCTool();
     makeTool(tool);
 
     GCodeTool *gCodeTool = new GCodeTool(tool);
@@ -47,7 +47,7 @@ QString FCCodeMaker::convert(const QString &filePath, QString &errorString)
     return convert(svgData);
 }
 
-Tool *FCCodeMaker::makeTool(Tool *tool)
+FCCTool *FCCodeMaker::makeTool(FCCTool *tool)
 {
     tool->setFeedRate(140);
     tool->setPlatformTemp(60);

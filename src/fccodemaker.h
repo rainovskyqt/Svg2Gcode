@@ -9,13 +9,14 @@
 #include <QObject>
 #include <QXmlStreamReader>
 
-#include "tool.h"
+#include "fcctool.h"
 
 class FCCodeMaker : public QObject
 {
     Q_OBJECT
 public:
     explicit FCCodeMaker(QObject *parent = nullptr);
+
 
     QString convert(QXmlStreamReader* reader);
     QString convert(QByteArray bytes);
@@ -29,7 +30,7 @@ private:
      * Функция служит для создания экземпляра исполнителя, тут передаются все настройки принтера, с рабочей программе,
      * нужно будет поддягивать файл настроек
      */
-    Tool *makeTool(Tool *tool);
+    FCCTool *makeTool(FCCTool *tool);
 };
 
 #endif // FCCODEMAKER_H

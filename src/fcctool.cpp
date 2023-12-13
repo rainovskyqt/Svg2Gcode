@@ -1,66 +1,66 @@
-#include "tool.h"
+#include "fcctool.h"
 
-Tool::Tool()
+FCCTool::FCCTool()
 {
 
 }
 
-int Tool::feedRate() const
+int FCCTool::feedRate() const
 {
     return m_feedRate;
 }
 
-void Tool::setFeedRate(int newFeedRate)
+void FCCTool::setFeedRate(int newFeedRate)
 {
     m_feedRate = newFeedRate;
 }
 
-int Tool::extruderTemp() const
+int FCCTool::extruderTemp() const
 {
     return m_extruderTemp;
 }
 
-void Tool::setExtruderTemp(int newExtruderTemp)
+void FCCTool::setExtruderTemp(int newExtruderTemp)
 {
     m_extruderTemp = newExtruderTemp;
 }
 
-int Tool::platformTemp() const
+int FCCTool::platformTemp() const
 {
     return m_platformTemp;
 }
 
-void Tool::setPlatformTemp(int newPlatformTemp)
+void FCCTool::setPlatformTemp(int newPlatformTemp)
 {
     m_platformTemp = newPlatformTemp;
 }
 
-double Tool::nozzleDiameter() const
+double FCCTool::nozzleDiameter() const
 {
     return m_nozzleDiameter;
 }
 
-void Tool::setNozzleDiameter(double newNozzleDiameter)
+void FCCTool::setNozzleDiameter(double newNozzleDiameter)
 {
     m_nozzleDiameter = newNozzleDiameter;
 }
 
-double Tool::layerHeight() const
+double FCCTool::layerHeight() const
 {
     return m_layerHeight;
 }
 
-void Tool::setLayerHeight(double newLayerHeight)
+void FCCTool::setLayerHeight(double newLayerHeight)
 {
     m_layerHeight = newLayerHeight;
 }
 
-double Tool::extrudeVolume() const
+double FCCTool::extrudeVolume() const
 {
     return m_extrudeVolume;
 }
 
-void Tool::setExtrudeVolume(double newExtrudeVolume)
+void FCCTool::setExtrudeVolume(double newExtrudeVolume)
 {
     m_extrudeVolume = newExtrudeVolume;
 }
